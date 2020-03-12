@@ -4,6 +4,7 @@
  int main(){
 	 ClockInit();
 	 GpioClockInit();
+	 ConfigureLeds();
 	 LcdInit();
 	 GPIOC->CRH &= 0xFFF44444;
 	 while (1){

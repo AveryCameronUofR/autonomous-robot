@@ -8,19 +8,13 @@
  #include "stm32f10x.h"
  #include "gpio.h"
  #include "clock.h"
- //initializes GPIO Clock for Port A,B and C
+ //initializes GPIO Clock for Port A,B, C and D
  void GpioClockInit(void){
-	 RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN;
+	 RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPDEN;
  }
- 
  
  void led_IO_init (void)
 {
-    //Enable peripheral clocks for various ports and subsystems
-    //Bit 4: Port C Bit3: Port B Bit 2: Port A
-    RCC->APB2ENR |=  RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPBEN
-        | RCC_APB2ENR_IOPAEN ;
-
     //Set the config and mode bits for Port C bit 9 and 8 so they will
     // be push-pull outputs (up to 50 MHz)
     GPIOC->CRH |= GPIO_CRH_MODE9 | GPIO_CRH_MODE8 ;
@@ -29,9 +23,9 @@
 
  void ConfigureLeds(void){
 	 //configures PA9 to PA12 to general purpose output, LED output
-	 GPIOA->CRH = 0x00033330;
+	 GPIOA->CRH &= 0xFFF0000F;
+	 GPIOA->CRH |= 0x00033330;
  }
- 
  
  uint16_t ReadDipSwitch(void){
 	uint16_t sw1_val;
