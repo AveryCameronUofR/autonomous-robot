@@ -23,9 +23,9 @@ void PwmInit(uint16_t period, uint16_t pulswidth){
 	TIM1->CCMR1 |= TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1PE | TIM_CCMR1_OC1FE;
 	//enable ch1 output on pa8
 	TIM1->CCER |= TIM_CCER_CC1E;
-	//0.1 ms 
-	TIM1->PSC = 0x095f;
-	//100 counts 10 ms
+	//0.05 ms 
+	TIM1->PSC = 0x04Af;
+	//200 counts 20 ms
 	TIM1->ARR = period;
 	//50 counts 5 ms
 	TIM1->CCR1 = pulswidth;
