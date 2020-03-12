@@ -39,4 +39,18 @@
  void ButtonsUpdateLeds(void);
  //Blinks all 4 leds
  void Blink(void);
- uint16_t ReadIR(void);
+ 
+ /**
+ * Name: ReadIR
+ * Input: IR Sensor to detect
+ * Output: IR Sensor Output
+ *
+ * Input is a number from 1 to 5 
+ * for the 5 IR Sensors on the board from
+ * Pins C8 to C12
+ *
+ * Output is a 1 (no detection) 
+ * or a 0 (detection, non black object within range)
+ */
+ uint8_t ReadIR(uint8_t);
+ 

@@ -133,8 +133,7 @@
 	 Delay(delay);
  }
  
- uint16_t ReadIR(void){
-	 return GPIOC->IDR & GPIO_IDR_IDR8;
-	 
+ uint8_t ReadIR(uint8_t sensor){
+	 return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor);
  }
  

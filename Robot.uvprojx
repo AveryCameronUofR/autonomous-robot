@@ -455,11 +455,6 @@
             <File>
               <FileName>Servo.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Servo.c</FilePath>
-            </File>
-            <File>
-              <FileName>Servo.c</FileName>
-              <FileType>1</FileType>
               <FilePath>.\STM Library\Servo.c</FilePath>
             </File>
           </Files>

@@ -4,16 +4,18 @@
  int main(){
 	 ClockInit();
 	 GpioClockInit();
-	 uint16_t IR = ReadIR();
 	 LcdInit();
 	 GPIOC->CRH &= 0xFFF44444;
 	 while (1){
 	   LcdFirstLine();
-		 uint16_t ir = ReadIR();
-		 ir = ir >>8;
-		 PrintHexToLcd(ir);
+		 uint8_t ir1 = ReadIR(1);
+		 uint8_t ir2 = ReadIR(2);
+		 uint8_t ir3 = ReadIR(3);
+		 uint8_t ir4 = ReadIR(4);
+		 uint8_t ir5 = ReadIR(5);
+		 PrintHexToLcd(ir1);
 		 LcdSecondLine();
-		 reg_out(GPIOC->IDR);
+		 PrintHexToLcd(ir2);
 		 Delay(5000000);
 	 }
 	 return 0;
