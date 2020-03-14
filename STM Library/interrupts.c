@@ -1,12 +1,12 @@
 /******************************************************************************
- * Name:    interupts.c
- * Description: STM32 interupt initialization
+ * Name:    interrupts.c
+ * Description: STM32 interrupt initialization
  * Version: V1.00
  * Authors: Avery Cameron
  *
  *****************************************************************************/
  #include "stm32f10x.h"
- #include "interupts.h"
+ #include "interrupts.h"
  
  void setupExti0PA(void){
 	 RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
@@ -29,15 +29,19 @@
 	 NVIC->ISER[0] |= NVIC_ISER_SETENA_8;
  }
  
- void setupExtiInterupt(uint8_t exti, uint8_t pinGroup, uint16_t edgeDetection, uint16_t nvicMask){
+ void setupExtiInterrupt(uint8_t exti, uint8_t pinGroup, uint16_t edgeDetection, uint16_t nvicMask){
 	 RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
 		//Enable EXTI for pin group, A=0, B=1 etc
 	 AFIO->EXTICR[exti] =pinGroup;
-	 // Unmask MR3
+	 // Unmask MR
 	 EXTI->IMR |= exti<<1;
-	 //Configure iterrupt to happen on falling edge
-	 EXTI->FTSR |= edgeDetection;
-	 //unmask EXTI3
+	 //Configure iterrupt to happen on edge
+	 if (edgeDetection == 1){
+		 EXTI->RTSR |= 1;
+	 } else {
+		 EXTI->FTSR |= 1;
+	 }
+	 //unmask EXTI 
 	 NVIC->ISER[0] |= nvicMask;
  }
  

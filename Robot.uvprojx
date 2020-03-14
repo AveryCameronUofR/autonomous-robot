@@ -413,16 +413,6 @@
               <FilePath>.\STM Library\gpio.h</FilePath>
             </File>
             <File>
-              <FileName>interupts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STM Library\interupts.c</FilePath>
-            </File>
-            <File>
-              <FileName>interupts.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\STM Library\interupts.h</FilePath>
-            </File>
-            <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\STM Library\lcd.c</FilePath>
@@ -456,6 +446,16 @@
               <FileName>Servo.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\STM Library\Servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STM Library\interrupts.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\STM Library\interrupts.h</FilePath>
             </File>
           </Files>
         </Group>
