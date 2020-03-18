@@ -6,10 +6,12 @@
  uint8_t count = 0;
  uint8_t count2 = 0;
  int time = 0;
+ uint8_t edgeDetector = 1;
  int main(){
 	 ClockInit();
 	 GpioClockInit();
 	 ConfigureLeds();
+	 led_IO_init();
 	 LcdInit();
 	 GPIOC->CRH &= 0xFFF44444;
 	 GPIOA->CRL &= 0xFFFF00FF;
@@ -17,10 +19,9 @@
 	 uint16_t period = 400;
 	 uint16_t pulsewidth = 15;
 	 PwmInit(period, pulsewidth);
-	 //Setup interupt on Pin A2 Rising Edge
-	 setupExtiInterrupt(2, 0, 1, NVIC_ISER_SETENA_8);
-	 //Setup interupt on Pin A3 Falling Edge
-	 setupExtiInterrupt(2, 0, 0, NVIC_ISER_SETENA_9);
+
+	 //Setup interupt on Pin A3 Rising Edge
+	 setupExtiInterrupt(2, 0, NVIC_ISER_SETENA_9);
 	 //setup systick interupt
 	 setupSysTick();
 	 uint8_t counted = 0;
@@ -41,38 +42,28 @@
 		 Delay(5000000);
 		 //UltraSonic Sensor Code 
 	   
-		 GPIOA->ODR &= 0xFFFFFFF7;
+		 GPIOA->ODR &= 0xFFFFFFFB;
 		 Delay(30);
-		 GPIOA->ODR |= 0x00000008;
+		 GPIOA->ODR |= 0x00000004;
 		 Delay(60);
-		 GPIOA->ODR &= 0xFFFFFFF7;
-		 Delay(1200);
-		 if (count == 1){
-			 counted = 1;
-		 } else {
-			 counted = 0;
-		 }
-		 if (counted == 0){
-			 LcdFirstLine();
-			 reg_out(count);
-			 LcdSecondLine();
-			 reg_out(count2);
-		 }
+		 GPIOA->ODR &= 0xFFFFFFFB;
+		 LcdFirstLine();
+		 reg_out(time);
+		 LcdSecondLine();
+		 reg_out(time);
 	 }
 	 return 0;
  }
  void SysTick_Handler(){
-		if(count == 1){
+	 //if waiting for falling edge
+		if(edgeDetector == 0){
 			time++;
+			
 		}
- }
- void EXTI2_IRQHandler(){
-	 EXTI->PR |= EXTI_PR_PR2;
-	 count += 1;
-	 time = 0;
+		GPIOC->ODR ^= GPIO_ODR_ODR8;
  }
  
   void EXTI3_IRQHandler(){
 	 EXTI->PR |= EXTI_PR_PR3;
-	 count2 += 1;
+	 edgeDetector ^= edgeDetector;
  }

@@ -19,7 +19,7 @@
  * Sets up an EXTI interrupt for the given pin number and pin group
  * Allows user to configure the interrupt trigger and unmask the interrupt
  */
- void setupExtiInterrupt(uint8_t exti, uint8_t pinGroup, uint16_t edgeDetection, uint16_t nvicMask);
+ void setupExtiInterrupt(uint8_t exti, uint8_t pinGroup, uint16_t nvicMask);
  
  void setupSysTick(void);
  void setupExti0PA(void);

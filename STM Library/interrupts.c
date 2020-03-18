@@ -29,18 +29,15 @@
 	 NVIC->ISER[0] |= NVIC_ISER_SETENA_8;
  }
  
- void setupExtiInterrupt(uint8_t exti, uint8_t pinGroup, uint16_t edgeDetection, uint16_t nvicMask){
+ void setupExtiInterrupt(uint8_t exti, uint8_t pinGroup, uint16_t nvicMask){
 	 RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
 		//Enable EXTI for pin group, A=0, B=1 etc
 	 AFIO->EXTICR[exti] =pinGroup;
 	 // Unmask MR
 	 EXTI->IMR |= exti<<1;
 	 //Configure iterrupt to happen on edge
-	 if (edgeDetection == 1){
-		 EXTI->RTSR |= 1;
-	 } else {
-		 EXTI->FTSR |= 1;
-	 }
+	 EXTI->RTSR |= 1;
+	 EXTI->FTSR |= 1;
 	 //unmask EXTI 
 	 NVIC->ISER[0] |= nvicMask;
  }
