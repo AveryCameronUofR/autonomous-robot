@@ -25,46 +25,7 @@ void ConfigureLeds(void){
 	//configures PA9 to PA12 to general purpose output, LED output
 	GPIOA->CRH &= 0xFFF0000F;
 	GPIOA->CRH |= 0x00033330;
-}
-
-uint16_t ReadDipSwitch(void){
-	uint16_t sw1_val;
-	 
-	sw1_val = ((( GPIOA->IDR & ( GPIO_IDR_IDR6 | GPIO_IDR_IDR7)) >> 6) \
-	| (( GPIOC->IDR & ( GPIO_IDR_IDR10 | GPIO_IDR_IDR11 )) >> 8)) \
-	& 0x0F;
-	 
-	return (sw1_val);
-}
-
-uint16_t ReadRedButton(void){
-	uint16_t val;
-	 
-	val = (( GPIOB->IDR & ( GPIO_IDR_IDR8)) >> 8);
-	 
-	return (val);
-}
-
-uint16_t ReadBlackButton(void){
-	uint16_t val;
-	
-	val = (( GPIOB->IDR & ( GPIO_IDR_IDR9)) >> 9);
-	 
-	return (val);
-}
-uint16_t ReadBlueButton(void){
-	uint16_t val;
-	
-	val = (( GPIOC->IDR & ( GPIO_IDR_IDR12)) >> 12);
-	 
-	return (val);
-}
-uint16_t ReadGreenButton(void){
-	uint16_t val;
-	
-	val = (( GPIOA->IDR & ( GPIO_IDR_IDR5)) >> 5);
-	 
-	return (val);
+	GPIOA->BSRR = 0x00001E00;
 }
 
 void UpdateLeds(uint16_t LED_val){
@@ -72,17 +33,6 @@ void UpdateLeds(uint16_t LED_val){
 	update_val = (LED_val<<9 & 0x1E00);
 	uint16_t odrVal = GPIOA->ODR & 0xE1FF;
 	GPIOA->ODR = odrVal | update_val;
-}
-
-void ButtonsUpdateLeds(void){
-	//read the button values
-	uint16_t redButton = ReadRedButton();
-	uint16_t blackButton = ReadBlackButton();
-	uint16_t blueButton = ReadBlueButton();
-	uint16_t greenButton = ReadGreenButton();
-	//map outputs to led position
-	uint16_t ledValue = (redButton) | (blackButton << 1) | (blueButton << 2) | (greenButton << 3);
-	UpdateLeds(ledValue);
 }
 
 void Blink(void){
