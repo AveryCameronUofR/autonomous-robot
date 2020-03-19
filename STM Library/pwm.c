@@ -1,10 +1,10 @@
 /******************************************************************************
- * Name:    pwm.c
- * Description: PWM functions
- * Version: V1.00
- * Authors: Avery Cameron
- *
- *****************************************************************************/
+* Name:    pwm.c
+* Description: PWM functions
+* Version: V1.00
+* Authors: Avery Cameron
+*
+*****************************************************************************/
 #include "stm32f10x.h"
 void PwmInit(uint16_t period, uint16_t pulswidth){
 	//Enable GPIOA and AFIO
@@ -33,7 +33,6 @@ void PwmInit(uint16_t period, uint16_t pulswidth){
 	TIM1->BDTR |= TIM_BDTR_MOE | TIM_BDTR_OSSI;
 	//enable timer 1
 	TIM1->CR1 |= TIM_CR1_ARPE | TIM_CR1_CEN;
-	
 }
 
 void setDutyCycle(uint16_t pulswidth) {

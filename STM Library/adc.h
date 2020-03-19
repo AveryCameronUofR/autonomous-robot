@@ -5,6 +5,6 @@
  * Authors: Avery Cameron
  *
  *****************************************************************************/
-  #include "stm32f10x.h"
-  void AdcInit(void); 
-	uint32_t conversion(uint16_t);
+#include "stm32f10x.h"
+void AdcInit(void); 
+uint32_t conversion(uint16_t);

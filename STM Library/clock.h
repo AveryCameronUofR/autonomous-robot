@@ -5,8 +5,7 @@
  * Authors: Avery Cameron
  *
  *****************************************************************************/
- #include "stm32f10x.h"
- //initialize system clock for m3 using RCC
- void ClockInit(void);
- void Delay(uint32_t);
- 
+#include "stm32f10x.h"
+//initialize system clock for m3 using RCC
+void ClockInit(void);
+void Delay(uint32_t);
