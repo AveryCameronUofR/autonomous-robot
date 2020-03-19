@@ -19,11 +19,10 @@
 	 uint16_t period = 400;
 	 uint16_t pulsewidth = 15;
 	 PwmInit(period, pulsewidth);
-
-	 //Setup interupt on Pin A3 Rising Edge
-	 setupExtiInterrupt(2, 0, NVIC_ISER_SETENA_9);
 	 //setup systick interupt
 	 setupSysTick();
+	 //Setup interupt on Pin A3 Rising Edge
+	 setupExtiInterrupt(3, 0, NVIC_ISER_SETENA_9);
 	 uint8_t counted = 0;
 	 while (1){
 		 uint8_t ir1 = ReadIR(1);
@@ -55,11 +54,6 @@
 	 return 0;
  }
  void SysTick_Handler(){
-	 //if waiting for falling edge
-		if(edgeDetector == 0){
-			time++;
-			
-		}
 		GPIOC->ODR ^= GPIO_ODR_ODR8;
  }
  
