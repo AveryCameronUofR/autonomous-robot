@@ -42,11 +42,11 @@
 		 Delay(5000000);
 		 //UltraSonic Sensor Code 
 	   
-		 GPIOA->ODR &= 0xFFFFFFFB;
+		 GPIOA->BSRR = 0x00040000;
 		 Delay(30);
-		 GPIOA->ODR |= 0x00000004;
+		 GPIOA->BSRR |= 0x00000004;
 		 Delay(60);
-		 GPIOA->ODR &= 0xFFFFFFFB;
+		 GPIOA->BSRR = 0x00040000;
 		 LcdFirstLine();
 		 reg_out(time);
 		 LcdSecondLine();
