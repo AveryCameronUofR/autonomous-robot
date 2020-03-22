@@ -21,8 +21,8 @@ int main(){
 	//setup systick interupt
 	*/
 	setupSysTick();
-	//Setup interupt on Pin A3 Rising Edge
-	setupExtiInterrupt(3, 0, NVIC_ISER_SETENA_9);
+	setupExti2PA();
+	setupExti3PA();
 	while (1){
 		/*
 		uint8_t ir1 = ReadIR(1);
@@ -42,20 +42,41 @@ int main(){
 		//UltraSonic Sensor Code 
 	   */
 		GPIOA->ODR &=  0xFFFFFFFB;
-		Delay(600000);
+		Delay(12);
 		GPIOA->ODR |= 0x00000004;
-		Delay(600000);
+		Delay(60);
 		GPIOA->ODR &=  0xFFFFFFFB;
+		
 		LcdFirstLine();
 		reg_out(time);
 		LcdSecondLine();
 		reg_out(time);
+		
+		//pull signall low for 18ms
+		//pull high and wait 20-40 us
+		//dht sends response signal 80us
+		//dht pulls up voltage for 80us, 
+		//every bit 50us low voltage, 40 bits totall 
 	}
 }
 void SysTick_Handler(){
 	GPIOC->ODR ^= GPIO_ODR_ODR8;
+	if (count == 1){
+		time += 1;
+	}
 }
 
 void EXTI3_IRQHandler(){
+	count = 0;
 	EXTI->PR |= EXTI_PR_PR3;
+	LcdFirstLine();
+	reg_out(time);
+	LcdSecondLine();
+	reg_out(time);
+	time = 0;
+}
+
+void EXTI2_IRQHandler(){
+	count = 1;
+	EXTI->PR |= EXTI_PR_PR2;
 }
