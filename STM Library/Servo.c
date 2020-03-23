@@ -11,7 +11,7 @@ int main(){
 	GpioClockInit();
 	ConfigureLeds();
 	LcdInit();
-	GPIOC->CRH &= 0xFFF44444;
+	ConfigureIrSensors();
 	GPIOA->CRL &= 0xFFFF00FF;
 	GPIOA->CRL |= 0x00003400;
 	uint16_t period = 400;

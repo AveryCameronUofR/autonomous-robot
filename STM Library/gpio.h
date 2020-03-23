@@ -33,6 +33,15 @@ void ButtonsUpdateLeds(void);
 void Blink(void);
 
 /**
+* Name: ConfigureIrSensors
+* Input: None
+* Output: None
+*
+* Sets up IR Sensors on pins PC8 to 12 as general Input
+*/
+void ConfigureIrSensors(void);
+
+/**
 * Name: ReadIR
 * Input: IR Sensor to detect
 * Output: IR Sensor Output

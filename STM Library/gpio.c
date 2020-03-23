@@ -41,6 +41,10 @@ void Blink(void){
 	Delay(delay);
 }
 
+void ConfigureIrSensors(){
+	GPIOC->CRH &= 0xFFF44444;
+}
+
 uint8_t ReadIR(uint8_t sensor){
 	return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor);
 }
