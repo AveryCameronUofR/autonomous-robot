@@ -7,18 +7,16 @@
  *****************************************************************************/
 #include "stm32f10x.h"
 void AdcInit(void){
-	//initialize gpioA
-	// initialize ADC Clock
-	// initialize AFIO Clock
 	RCC->APB2ENR |=  RCC_APB2ENR_IOPAEN | RCC_APB2ENR_ADC1EN | RCC_APB2ENR_AFIOEN;
 	
-	//initialize the pins
-	GPIOA->CRL &= 0xFFFFFFF9;
+	//initialize the pins to AF input
+	GPIOA->CRL &= 0xFFFFFFF0;
+	GPIOA->CRL |= 0x00000009;
 	//turn on the ADC
 	ADC1->CR2 = ADC_CR2_ADON;
 }
 
-uint32_t conversion(uint16_t channel){
+uint32_t ConvertAdcChannel(uint8_t channel){
 	//set channel
 	ADC1->SQR3 = channel;	
 	ADC1->CR2 = ADC_CR2_ADON;
