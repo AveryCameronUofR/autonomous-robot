@@ -7,7 +7,7 @@
 *****************************************************************************/
 #include "stm32f10x.h"
 
-/*
+/**
 * Name: Tim1Ch1PwmInit
 * Input: 
 * 	uint16_t Period: The period for PWM
@@ -22,7 +22,7 @@
 */
 void Tim1Ch1PwmInit(uint16_t, uint16_t); 
 
-/*
+/**
 * Name: Tim4PwmInit
 * Input: 
 *		uint16_t Period 
@@ -36,7 +36,7 @@ void Tim1Ch1PwmInit(uint16_t, uint16_t);
 */ 
 void Tim4PwmInit(uint16_t);
 
-/*
+/**
 * Name: SetTim1DutyCycle
 * Input: 
 * 	uint16_t Pulsewidth: The new pulsewidth  
