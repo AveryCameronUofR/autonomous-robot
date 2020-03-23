@@ -6,6 +6,22 @@
  *
  *****************************************************************************/
 #include "stm32f10x.h"
-//initialize system clock for m3 using RCC
+/**
+* Name: ClockInit
+* Input: None
+* Output: None
+*
+* Initializes 24MHz clock for the STM32F100RB Board
+*/
 void ClockInit(void);
+
+/**
+* Name: Delay
+* Input: 
+* 	uint32_t: Value to Delay by
+* Output: None
+*
+* Delays for the given amount of cycles,
+* Note: 6000 is ~1ms of time
+*/
 void Delay(uint32_t);

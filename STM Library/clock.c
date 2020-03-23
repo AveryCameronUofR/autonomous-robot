@@ -20,13 +20,9 @@ void ClockInit(void){
 	uint32_t temp = 0x00;
 	//wait for PLL to stabalize
 	while (temp != 0x02000000)  // Wait for the PLL to stabilize
-   	{
-        temp = RCC->CR & 0x02000000; //Check to see if the PLL lock bit is set
-   	}
-	
-	// Write a 0xB ( 1011b ) into the configuration and mode bits for PA8 (AFIO)
-   	// GPIOA->CRH |= GPIO_CRH_CNF8_1 | GPIO_CRH_MODE8_1 | GPIO_CRH_MODE8_0 ;
-   	// GPIOA->CRH &= ~GPIO_CRH_CNF8_0 ;
+	{
+		temp = RCC->CR & 0x02000000; //Check to see if the PLL lock bit is set
+  }
 }
 
 
