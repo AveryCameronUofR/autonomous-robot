@@ -29,4 +29,4 @@ void AdcInit(void);
 * Takes in the channel to convert (Channel 1 is potentiometer)
 * Waits for end of conversion signal, returns the data for the ADC Channel
 */
-uint32_t ConvertAdcChannel(uint8_t);
+uint32_t ConvertAdcChannel(uint8_t channel);

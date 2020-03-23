@@ -28,7 +28,7 @@ void ConfigureLeds(void);
 
 /**
 * Name: UpdateLeds
-* Input: uint16_t Register value to update LEDs with
+* Input: uint16_t LED_val: Register value to update LEDs with
 * Return: None
 *
 * Shifts the given value left 9. ANDs it with 0x1E00 to only change the LEDs
@@ -36,7 +36,7 @@ void ConfigureLeds(void);
 *
 * Note: 1 in the input is an ON indicator for the LED
 */
-void UpdateLeds(uint16_t);
+void UpdateLeds(uint16_t LED_val);
 
 /**
 * Name: BlinkLeds
@@ -59,7 +59,8 @@ void ConfigureIrSensors(void);
 
 /**
 * Name: ReadIR
-* Input: IR Sensor to detect
+* Input: 
+* 	sensor: IR Sensor number to detect
 * Return: IR Sensor Output
 *
 * Input is a number from 1 to 5 
@@ -69,7 +70,7 @@ void ConfigureIrSensors(void);
 * Output is a 1 (no detection) 
 * or a 0 (detection, non black object within range)
 */
-uint8_t ReadIR(uint8_t);
+uint8_t ReadIR(uint8_t sensor);
 
 
 /**

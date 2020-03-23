@@ -6,7 +6,7 @@
 *
 *****************************************************************************/
 #include "stm32f10x.h"
-void Tim1Ch1PwmInit(uint16_t period, uint16_t pulswidth){
+void Tim1Ch1PwmInit(uint16_t period, uint16_t pulsewidth){
 	//Enable GPIOA and AFIO
 	RCC->APB2ENR |=  RCC_APB2ENR_IOPAEN | RCC_APB2ENR_AFIOEN | RCC_APB2ENR_TIM1EN;
 	//set PA8 to AF Output
@@ -27,7 +27,7 @@ void Tim1Ch1PwmInit(uint16_t period, uint16_t pulswidth){
 	//200 counts 20 ms
 	TIM1->ARR = period;
 	//50 counts 5 ms
-	TIM1->CCR1 = pulswidth;
+	TIM1->CCR1 = pulsewidth;
 	//main output enable, force idle level first
 	TIM1->BDTR |= TIM_BDTR_MOE | TIM_BDTR_OSSI;
 	//enable timer 1
@@ -75,8 +75,8 @@ void Tim4PwmInit(uint16_t period){
 	TIM4->CR1 |= TIM_CR1_ARPE | TIM_CR1_CEN; 
 }
 
-void SetTim1DutyCycle(uint16_t pulswidth) {
-	TIM1->CCR1 = pulswidth;
+void SetTim1DutyCycle(uint16_t pulsewidth) {
+	TIM1->CCR1 = pulsewidth;
 	//Reinit the counter
 	TIM1->EGR |= TIM_EGR_UG;
 }
