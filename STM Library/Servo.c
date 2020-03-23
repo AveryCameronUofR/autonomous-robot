@@ -16,7 +16,7 @@ int main(){
 	GPIOA->CRL |= 0x00003400;
 	uint16_t period = 400;
 	uint16_t pulsewidth = 15;
-	PwmInit(period, pulsewidth);
+	Tim1Ch1PwmInit(period, pulsewidth);
 	//Setup interupt on Pin A2 Rising Edge
 	setupExtiInterrupt(2, 0, 1, NVIC_ISER_SETENA_8);
 	//Setup interupt on Pin A3 Falling Edge
@@ -31,13 +31,13 @@ int main(){
 		uint8_t ir4 = ReadIR(4);
 		uint8_t ir5 = ReadIR(5);
 		pulsewidth = 15;
-		setDutyCycle(pulsewidth);
+		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);		 
 		pulsewidth = 30;
-		setDutyCycle(pulsewidth);
+		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);
 		pulsewidth = 45;
-		setDutyCycle(pulsewidth);
+		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);
 		//UltraSonic Sensor Code 
 	
