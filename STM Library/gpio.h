@@ -6,31 +6,47 @@
  *
  *****************************************************************************/
 #include "stm32f10x.h"
- 
-//initializes clocks for gpio a,b,c
+/**
+* Name: GpioClockInit
+* Input: None
+* Output: None
+*
+* Initializes clocks for GPIO A, B and C
+*/
 void GpioClockInit(void);
-void led_IO_init (void);
-//configures the led pins for output
+
+
+/**
+* Name: ConfigureLeds
+* Input: None
+* Output: None
+*
+* Configures Onboard LEDs for general purpose push pull output
+* Initializes pins PA9-12 as GP output 
+*/
 void ConfigureLeds(void);
 
-//reads the total dipswitch value
-uint16_t ReadDipSwitch(void);
-
-//reads the red button value
-uint16_t ReadRedButton(void);
-//reads the black button value
-uint16_t ReadBlackButton(void);
-//reads the black button value
-uint16_t ReadBlueButton(void);
-//reads the black button value
-uint16_t ReadGreenButton(void);
-
-//Updates leds based on given value
+/**
+* Name: UpdateLeds
+* Input: uint16_t Register value to update LEDs with
+* Output: None
+*
+* Shifts the given value left 9. ANDs it with 0x1E00 to only change the LEDs
+* Applies the updated value
+*
+* Note: 1 in the input is an ON indicator for the LED
+*/
 void UpdateLeds(uint16_t);
-//Buttons update the leds directly
-void ButtonsUpdateLeds(void);
-//Blinks all 4 leds
-void Blink(void);
+
+/**
+* Name: BlinkLeds
+* Input: None
+* Output: None
+*
+* Turns ON or OFF the LEDs on pins PA9-12 for 1 sec
+* Note: Changes current state, will have to be looped for desired blink count
+*/
+void BlinkLeds(void);
 
 /**
 * Name: ConfigureIrSensors

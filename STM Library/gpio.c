@@ -8,17 +8,9 @@
 #include "stm32f10x.h"
 #include "gpio.h"
 #include "clock.h"
-//initializes GPIO Clock for Port A,B, C and D
+
 void GpioClockInit(void){
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPDEN;
-}
-
-void led_IO_init (void)
-{
-    //Set the config and mode bits for Port C bit 9 and 8 so they will
-    // be push-pull outputs (up to 50 MHz)
-    GPIOC->CRH |= GPIO_CRH_MODE9 | GPIO_CRH_MODE8 ;
-    GPIOC->CRH &= ~GPIO_CRH_CNF9 & ~GPIO_CRH_CNF8 ;
 }
 
 void ConfigureLeds(void){
@@ -30,12 +22,13 @@ void ConfigureLeds(void){
 
 void UpdateLeds(uint16_t LED_val){
 	uint16_t update_val;
+	//update the value in PA9-12 (inverse logic requires the 0xE1FF)
 	update_val = (LED_val<<9 & 0x1E00);
 	uint16_t odrVal = GPIOA->ODR & 0xE1FF;
 	GPIOA->ODR = odrVal | update_val;
 }
 
-void Blink(void){
+void BlinkLeds(void){
 	int delay = 600000;
 	UpdateLeds(~GPIOA->ODR);
 	Delay(delay);
