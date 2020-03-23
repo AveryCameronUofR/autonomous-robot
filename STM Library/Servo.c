@@ -54,9 +54,9 @@ int main(){
 		}
 		if (counted == 0){
 			LcdFirstLine();
-			reg_out(count);
+			OutputRegisterValue(count);
 			LcdSecondLine();
-			reg_out(count2);
+			OutputRegisterValue(count2);
 		}
 	}
  }
