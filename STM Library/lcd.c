@@ -52,10 +52,10 @@ void LcdSecondLine(void){
  CommandToLcd(0xC0);
 }
 
-//takes value in to set cursor position
 void LcdSetCursor(uint8_t data){
 	CommandToLcd(0x80 | data);
 }
+
 void CommandToLcd(uint8_t data){
 	//Sets RS low(0, takes a command), Write on (0), enable high
 	GPIOB->BSRR=LCD_CM_ENA;
@@ -83,6 +83,7 @@ void PrintStringToLcd(char str[]){
 	} 
 }
 void PrintHexToLcd(uint16_t data){
+	//converts to ASCII Value (Numbers vs letters)
 	if (data <= 0x09){
 		DataToLcd(data + 0x30);
 	} 
@@ -94,7 +95,7 @@ void PrintHexToLcd(uint16_t data){
 void OutputRegisterValue(uint16_t reg_data){
 	int i;
 	uint16_t shifted_val;
-	for ( i=16; i >= 0 ; i = (i-4))
+	for (i=16; i >= 0 ; i = (i-4))
 	{
 		shifted_val = (reg_data >> i) & 0xf;
 		PrintHexToLcd(shifted_val);
