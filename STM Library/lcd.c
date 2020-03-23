@@ -12,17 +12,17 @@
 
 void LcdInit(void){
 	LcdClockInit();
+	ConfigureLcdPins();
 	//poll controller
 	CommandToLcd(LCD_8B2L);
 	CommandToLcd(LCD_8B2L);
 	CommandToLcd(LCD_8B2L);
-	//set up as 8 bit controller
+
 	CommandToLcd(LCD_8B2L);
-	//display on, cursor on, cursor blinks
+	
 	CommandToLcd(LCD_DCB);
-	//clear display
 	CommandToLcd(LCD_CLR);
-	//set entry mode, increment not shift
+	
 	CommandToLcd(LCD_MCR);
 }
 
@@ -30,11 +30,10 @@ void LcdInit(void){
 //Called by Clock Init
 void LcdClockInit(void){
 	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN;
-	ConfigureLcdPins();
 }
 
 void ConfigureLcdPins(void){
-	//configures PB0,1, 5 to PA12 to general purpose output
+	//configures PB0,1, 5 to general purpose output
 	GPIOB->CRL &= 0xFF0FFF00;
 	GPIOB->CRL |= 0x00300033;
 	
@@ -92,7 +91,7 @@ void PrintHexToLcd(uint16_t data){
 	}
 }
 
-void reg_out( uint16_t reg_data){
+void OutputRegisterValue(uint16_t reg_data){
 	int i;
 	uint16_t shifted_val;
 	for ( i=16; i >= 0 ; i = (i-4))
