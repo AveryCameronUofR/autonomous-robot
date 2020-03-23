@@ -9,7 +9,7 @@
 /**
 * Name: GpioClockInit
 * Input: None
-* Output: None
+* Return: None
 *
 * Initializes clocks for GPIO A, B and C
 */
@@ -19,7 +19,7 @@ void GpioClockInit(void);
 /**
 * Name: ConfigureLeds
 * Input: None
-* Output: None
+* Return: None
 *
 * Configures Onboard LEDs for general purpose push pull output
 * Initializes pins PA9-12 as GP output 
@@ -29,7 +29,7 @@ void ConfigureLeds(void);
 /**
 * Name: UpdateLeds
 * Input: uint16_t Register value to update LEDs with
-* Output: None
+* Return: None
 *
 * Shifts the given value left 9. ANDs it with 0x1E00 to only change the LEDs
 * Applies the updated value
@@ -41,7 +41,7 @@ void UpdateLeds(uint16_t);
 /**
 * Name: BlinkLeds
 * Input: None
-* Output: None
+* Return: None
 *
 * Turns ON or OFF the LEDs on pins PA9-12 for 1 sec
 * Note: Changes current state, will have to be looped for desired blink count
@@ -60,7 +60,7 @@ void ConfigureIrSensors(void);
 /**
 * Name: ReadIR
 * Input: IR Sensor to detect
-* Output: IR Sensor Output
+* Return: IR Sensor Output
 *
 * Input is a number from 1 to 5 
 * for the 5 IR Sensors on the board from
