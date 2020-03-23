@@ -48,3 +48,11 @@ void ConfigureIrSensors(){
 uint8_t ReadIR(uint8_t sensor){
 	return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor);
 }
+
+void ConfigureMotorInputs(){
+	GPIOB->CRL &= 0xFFF00FFF;
+	GPIOB->CRL |= 0x00033000;
+	GPIOB->CRH &= 0x000000FF;
+	GPIOB->CRH |= 0x33333300;
+}
+

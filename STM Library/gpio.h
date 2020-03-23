@@ -54,3 +54,22 @@ void ConfigureIrSensors(void);
 * or a 0 (detection, non black object within range)
 */
 uint8_t ReadIR(uint8_t);
+
+
+/**
+* Name: ConfigureMotorInputs
+* Input: None
+* Output: None
+*
+* Configures Pins PB 3,4,10 to 15 as GP output 
+* These pins are used for motor control as follows:
+* PB3 Front Right
+* PB4 Front Right
+* PB10 Front Left
+* PB11 Front Left
+* PB12 Rear Right
+* PB13 Rear Right
+* PB14 Rear Left
+* PB15 Rear Left
+*/
+void ConfigureMotorInputs(void);
