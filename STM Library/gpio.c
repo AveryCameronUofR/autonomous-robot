@@ -67,8 +67,8 @@ void MoveForward(void)
 	
 		GPIOB->ODR |= GPIO_ODR_ODR14;
 		GPIOB->ODR &= ~GPIO_ODR_ODR15;
-		TIM4->CCR1 = 75;
-    TIM4->CCR2 = 75;
-    TIM4->CCR3 = 75;
-    TIM4->CCR4 = 75;
+		TIM4->CCR1 = 100;
+    TIM4->CCR2 = 100;
+    TIM4->CCR3 = 100;
+    TIM4->CCR4 = 100;
 }
