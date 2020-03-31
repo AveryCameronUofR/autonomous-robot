@@ -91,4 +91,4 @@ uint8_t ReadIR(uint8_t sensor);
 */
 void ConfigureMotorInputs(void);
 
-void move_forward(void);
+void MoveForward(void);
