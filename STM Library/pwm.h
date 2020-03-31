@@ -34,7 +34,7 @@ void Tim1Ch1PwmInit(uint16_t period, uint16_t pulsewidth);
 * 
 * Notes: 
 */ 
-void Tim4PwmInit(uint16_t period);
+void Tim4PwmInit(uint16_t period, uint16_t pulsewidth);
 
 /**
 * Name: SetTim1DutyCycle
@@ -47,3 +47,18 @@ void Tim4PwmInit(uint16_t period);
 * Notes:
 */
 void SetTim1DutyCycle(uint16_t pulsewidth);
+
+/**
+* Name: SetTim4DutyCycle
+* Input: 
+* 	uint16_t Pulsewidth: The new pulsewidth  
+* Return: None
+*
+* Description: 
+* Sets the pulsewidth for TIM4
+* Notes:
+*/
+void SetTim4DutyCycle(uint16_t pulsewidth);
+
+void motor_clock(void);
+void motor_forward(void);
