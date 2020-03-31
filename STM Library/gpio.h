@@ -90,3 +90,5 @@ uint8_t ReadIR(uint8_t sensor);
 * PB15 Rear Left
 */
 void ConfigureMotorInputs(void);
+
+void move_forward(void);
