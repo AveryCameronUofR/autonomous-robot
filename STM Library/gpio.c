@@ -54,7 +54,7 @@ void ConfigureMotorInputs(){
 	GPIOB->CRH &= ~GPIO_CRH_CNF10 & ~GPIO_CRH_CNF11 & ~GPIO_CRH_CNF12 & ~GPIO_CRH_CNF13 & ~GPIO_CRH_CNF14 & ~GPIO_CRH_CNF15;
 }
 
-void move_forward(void)
+void MoveForward(void)
 {
 		GPIOB->ODR |= GPIO_ODR_ODR3;
 		GPIOB->ODR &= ~GPIO_ODR_ODR4;
@@ -72,4 +72,3 @@ void move_forward(void)
     TIM4->CCR3 = 75;
     TIM4->CCR4 = 75;
 }
-
