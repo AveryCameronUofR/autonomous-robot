@@ -43,7 +43,10 @@ uint8_t ReadIR(uint8_t sensor){
 }
 
 void ConfigureMotorInputs(){
+	//JTAG-DP Disabled and SW-DP Enabled
 	AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_JTAGDISABLE;
+	
+	//Configure GPIO Output
 	GPIOB->CRL |= GPIO_CRL_MODE3 | GPIO_CRL_MODE4;
 	GPIOB->CRL &= ~GPIO_CRL_CNF3 & ~GPIO_CRL_CNF4;
 	
@@ -56,10 +59,14 @@ void move_forward(void)
 		GPIOB->ODR |= GPIO_ODR_ODR3;
 		GPIOB->ODR &= ~GPIO_ODR_ODR4;
 	
-		GPIOC->ODR = GPIO_ODR_ODR10;
-		GPIOC->ODR = ~GPIO_ODR_ODR11;
-		//GPIOA->ODR = 0x00000A40;
-		//GPIOC->ODR = 0x00000400;
+		GPIOB->ODR |= GPIO_ODR_ODR10;
+		GPIOB->ODR &= ~GPIO_ODR_ODR11;
+	
+		GPIOB->ODR |= GPIO_ODR_ODR12;
+		GPIOB->ODR &= ~GPIO_ODR_ODR13;
+	
+		GPIOB->ODR |= GPIO_ODR_ODR14;
+		GPIOB->ODR &= ~GPIO_ODR_ODR15;
 		TIM4->CCR1 = 75;
     TIM4->CCR2 = 75;
     TIM4->CCR3 = 75;
