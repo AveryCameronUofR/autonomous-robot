@@ -74,6 +74,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="no" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
@@ -135,109 +136,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="photo-elements" urn="urn:adsk.eagle:library:323">
-<description>&lt;b&gt;Photocells&lt;/b&gt;&lt;p&gt;
-Manufakturer: PerkinElmer Optoelektronics&lt;br&gt;
-www.perkinelmer.com/opto</description>
-<packages>
-<package name="D11XX" urn="urn:adsk.eagle:footprint:22181/1" library_version="2">
-<description>&lt;b&gt;Photo Sensor&lt;/b&gt; Oil Burner Control Applications&lt;p&gt;
-Source: http://optoelectronics.perkinelmer.com/content/Datasheets/DTS_PhotocellsD1160.pdf</description>
-<wire x1="-4.05" y1="-0.05" x2="4.05" y2="-0.05" width="0.2032" layer="21" curve="-180"/>
-<wire x1="4.05" y1="0.05" x2="-4.05" y2="0.05" width="0.2032" layer="21" curve="-180"/>
-<wire x1="-2.95" y1="-2.575" x2="-2.95" y2="-0.7" width="0.1016" layer="21"/>
-<wire x1="-2.95" y1="0.675" x2="-2.95" y2="2.5" width="0.1016" layer="21"/>
-<wire x1="-2.95" y1="2.5" x2="2.95" y2="2.5" width="0.1016" layer="21"/>
-<wire x1="2.95" y1="2.5" x2="2.95" y2="0.675" width="0.1016" layer="21"/>
-<wire x1="2.95" y1="-0.65" x2="2.95" y2="-2.575" width="0.1016" layer="21"/>
-<wire x1="2.95" y1="-2.575" x2="-2.95" y2="-2.575" width="0.1016" layer="21"/>
-<wire x1="-0.9" y1="-3.575" x2="-0.9" y2="-2.775" width="0.1016" layer="21"/>
-<wire x1="0.9" y1="-3.575" x2="0.9" y2="-2.775" width="0.1016" layer="21"/>
-<pad name="1" x="-2.5" y="0" drill="0.7" diameter="1.4"/>
-<pad name="2" x="2.5" y="0" drill="0.7" diameter="1.4"/>
-<text x="-2.54" y="-5.715" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.81" y="4.445" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-3" y1="-2.625" x2="3" y2="2.55" layer="51"/>
-<polygon width="0.1016" layer="21">
-<vertex x="-0.9" y="-2.775"/>
-<vertex x="-1.2" y="-3.35"/>
-<vertex x="-0.6" y="-3.35"/>
-</polygon>
-<polygon width="0.1016" layer="21">
-<vertex x="0.9" y="-2.775"/>
-<vertex x="0.6" y="-3.35"/>
-<vertex x="1.2" y="-3.35"/>
-</polygon>
-</package>
-</packages>
-<packages3d>
-<package3d name="D11XX" urn="urn:adsk.eagle:package:22200/1" type="box" library_version="2">
-<description>Photo Sensor Oil Burner Control Applications
-Source: http://optoelectronics.perkinelmer.com/content/Datasheets/DTS_PhotocellsD1160.pdf</description>
-<packageinstances>
-<packageinstance name="D11XX"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="PHOTOCELL" urn="urn:adsk.eagle:symbol:22178/1" library_version="2">
-<wire x1="-3.048" y1="2.413" x2="-1.651" y2="1.016" width="0.1524" layer="94"/>
-<wire x1="-3.175" y1="1.27" x2="-1.778" y2="-0.127" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-1.016" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="1.016" y1="-1.143" x2="-1.016" y2="-0.381" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="-0.381" x2="1.016" y2="0.381" width="0.254" layer="94"/>
-<wire x1="1.016" y1="0.381" x2="-1.016" y2="1.143" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="1.143" x2="1.016" y2="1.905" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="1.016" y2="1.905" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="-1.905" x2="1.016" y2="-1.143" width="0.254" layer="94"/>
-<text x="2.54" y="0" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-<polygon width="0.1524" layer="94">
-<vertex x="-1.778" y="-0.127"/>
-<vertex x="-2.667" y="0.254"/>
-<vertex x="-2.159" y="0.762"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-1.651" y="1.016"/>
-<vertex x="-2.54" y="1.397"/>
-<vertex x="-2.032" y="1.905"/>
-</polygon>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="D11" urn="urn:adsk.eagle:component:22210/2" prefix="PH" library_version="2">
-<description>&lt;b&gt;Photo Sensor&lt;/b&gt; Oil Burner Control Applications&lt;p&gt;
-Source: http://optoelectronics.perkinelmer.com/content/Datasheets/DTS_PhotocellsD1160.pdf</description>
-<gates>
-<gate name="G$1" symbol="PHOTOCELL" x="0" y="0" swaplevel="1"/>
-</gates>
-<devices>
-<device name="" package="D11XX">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:22200/1"/>
-</package3dinstances>
-<technologies>
-<technology name="60_12">
-<attribute name="POPULARITY" value="0" constant="no"/>
-</technology>
-<technology name="60_13">
-<attribute name="POPULARITY" value="0" constant="no"/>
-</technology>
-<technology name="72_12">
-<attribute name="POPULARITY" value="0" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="display-lcd" urn="urn:adsk.eagle:library:214">
 <description>&lt;b&gt;Hitachi, Data Modul, Tuxgraphics - LCD Displays&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -7150,9 +7048,133 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </sheet>
 </sheets>
 </module>
+<module name="STM32" prefix="" dx="30.48" dy="20.32">
+<ports>
+</ports>
+<variantdefs>
+</variantdefs>
+<parts>
+</parts>
+<sheets>
+<sheet>
+<plain>
+</plain>
+<instances>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+</sheets>
+</module>
+<module name="STM32F100RB" prefix="" dx="38.1" dy="76.2">
+<ports>
+<port name="GND" side="right" coord="-7.62" direction="io"/>
+<port name="NC" side="right" coord="-5.08" direction="io"/>
+<port name="3V3" side="right" coord="-2.54" direction="io"/>
+<port name="VBATT" side="right" coord="0" direction="io"/>
+<port name="PC13" side="right" coord="2.54" direction="io"/>
+<port name="PC14" side="right" coord="5.08" direction="io"/>
+<port name="PC15" side="right" coord="7.62" direction="io"/>
+</ports>
+<variantdefs>
+</variantdefs>
+<parts>
+</parts>
+<sheets>
+<sheet>
+<plain>
+</plain>
+<instances>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+</sheets>
+</module>
+<module name="STMF100" prefix="" dx="38.1" dy="76.2">
+<ports>
+<port name="GND" side="right" coord="-35.56" direction="io"/>
+<port name="NC" side="right" coord="-33.02" direction="io"/>
+<port name="3V3" side="right" coord="-30.48" direction="io"/>
+<port name="VBATT" side="right" coord="-27.94" direction="io"/>
+<port name="PC13" side="right" coord="-25.4" direction="io"/>
+<port name="PC14" side="right" coord="-22.86" direction="io"/>
+<port name="PC15" side="right" coord="-20.32" direction="io"/>
+<port name="PD0" side="right" coord="-17.78" direction="io"/>
+<port name="PD1" side="right" coord="-15.24" direction="io"/>
+<port name="RST" side="right" coord="-12.7" direction="io"/>
+<port name="PC0" side="right" coord="-10.16" direction="io"/>
+<port name="PC1" side="right" coord="-7.62" direction="io"/>
+<port name="PC2" side="right" coord="-5.08" direction="io"/>
+<port name="PC3" side="right" coord="-2.54" direction="io"/>
+<port name="PA0" side="right" coord="0" direction="io"/>
+<port name="PA1" side="right" coord="2.54" direction="io"/>
+<port name="PA2" side="right" coord="5.08" direction="io"/>
+<port name="PA3" side="right" coord="7.62" direction="io"/>
+<port name="PA4" side="right" coord="10.16" direction="io"/>
+<port name="PA5" side="right" coord="12.7" direction="io"/>
+<port name="PA6" side="right" coord="15.24" direction="io"/>
+<port name="PA7" side="right" coord="17.78" direction="io"/>
+<port name="PC4" side="right" coord="20.32" direction="io"/>
+<port name="PC5" side="right" coord="22.86" direction="io"/>
+<port name="PB0" side="right" coord="25.4" direction="io"/>
+<port name="PB1" side="right" coord="27.94" direction="io"/>
+<port name="PB2" side="right" coord="30.48" direction="io"/>
+<port name="5V" side="left" coord="-30.48" direction="io"/>
+<port name="PB9" side="left" coord="-27.94" direction="io"/>
+<port name="PB8" side="left" coord="-25.4" direction="io"/>
+<port name="BOOT" side="left" coord="-22.86" direction="io"/>
+<port name="PB7" side="left" coord="-20.32" direction="io"/>
+<port name="PB6" side="left" coord="-17.78" direction="io"/>
+<port name="PB5" side="left" coord="-15.24" direction="io"/>
+<port name="PB4" side="left" coord="-12.7" direction="io"/>
+<port name="PB3" side="left" coord="-10.16" direction="io"/>
+<port name="PD2" side="left" coord="-7.62" direction="io"/>
+<port name="PC12" side="left" coord="-5.08" direction="io"/>
+<port name="PC11" side="left" coord="-2.54" direction="io"/>
+<port name="PC10" side="left" coord="0" direction="io"/>
+<port name="PA15" side="left" coord="2.54" direction="io"/>
+<port name="PA14" side="left" coord="5.08" direction="io"/>
+<port name="PA13" side="left" coord="7.62" direction="io"/>
+<port name="PA12" side="left" coord="10.16" direction="io"/>
+<port name="PA11" side="left" coord="12.7" direction="io"/>
+<port name="PA10" side="left" coord="15.24" direction="io"/>
+<port name="PA9" side="left" coord="17.78" direction="io"/>
+<port name="PA8" side="left" coord="20.32" direction="io"/>
+<port name="PC9" side="left" coord="22.86" direction="io"/>
+<port name="PC8" side="left" coord="25.4" direction="io"/>
+<port name="PC7" side="left" coord="27.94" direction="io"/>
+<port name="PC6" side="left" coord="30.48" direction="io"/>
+<port name="PB10" side="top" coord="12.7" direction="io"/>
+<port name="PB11" side="top" coord="10.16" direction="io"/>
+<port name="PB12" side="top" coord="7.62" direction="io"/>
+<port name="PB15" side="top" coord="-12.7" direction="io"/>
+<port name="PB14" side="top" coord="-10.16" direction="io"/>
+<port name="PB13" side="top" coord="-7.62" direction="io"/>
+</ports>
+<variantdefs>
+</variantdefs>
+<parts>
+</parts>
+<sheets>
+<sheet>
+<plain>
+</plain>
+<instances>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+</sheets>
+</module>
 </modules>
 <parts>
-<part name="PH1" library="photo-elements" library_urn="urn:adsk.eagle:library:323" deviceset="D11" device="" package3d_urn="urn:adsk.eagle:package:22200/1" technology="60_12"/>
 <part name="DIS1" library="display-lcd" library_urn="urn:adsk.eagle:library:214" deviceset="TUXGR_16X2_R2" device="" package3d_urn="urn:adsk.eagle:package:13139/1"/>
 <part name="IC1" library="st-microelectronics" library_urn="urn:adsk.eagle:library:368" deviceset="L298" device="" package3d_urn="urn:adsk.eagle:package:26823/1"/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="LZR181" package3d_urn="urn:adsk.eagle:package:15808/1"/>
@@ -7164,7 +7186,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R2B" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0309/12" package3d_urn="urn:adsk.eagle:package:23571/1" value="10K"/>
 <part name="R2A" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0309/12" package3d_urn="urn:adsk.eagle:package:23571/1" value="10K"/>
 <part name="IC2" library="st-microelectronics" library_urn="urn:adsk.eagle:library:368" deviceset="L298" device="" package3d_urn="urn:adsk.eagle:package:26823/1"/>
-<part name="R2A2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0309/12" package3d_urn="urn:adsk.eagle:package:23571/1" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -7366,14 +7387,14 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="66.04" y="81.28" size="1.778" layer="93">12V</text>
 <text x="66.04" y="55.88" size="1.778" layer="93">GND</text>
 <text x="78.74" y="83.82" size="1.778" layer="93">Motor Controller</text>
-<text x="20.32" y="55.88" size="1.778" layer="93">MC_ENA</text>
+<text x="20.32" y="63.5" size="1.778" layer="93">MC_ENA</text>
 <text x="20.32" y="66.04" size="1.778" layer="93">MC_ENB</text>
 <wire x1="76.2" y1="76.2" x2="68.58" y2="76.2" width="0.1524" layer="93"/>
 <wire x1="76.2" y1="73.66" x2="68.58" y2="73.66" width="0.1524" layer="93"/>
-<text x="20.32" y="58.42" size="1.778" layer="93">MC_I1</text>
-<text x="20.32" y="63.5" size="1.778" layer="93">MC_I2</text>
-<text x="20.32" y="71.12" size="1.778" layer="93">MC_I3</text>
-<text x="20.32" y="73.66" size="1.778" layer="93">MC_I4</text>
+<text x="20.32" y="55.88" size="1.778" layer="93">MC_I1</text>
+<text x="20.32" y="58.42" size="1.778" layer="93">MC_I2</text>
+<text x="-10.16" y="-10.16" size="1.778" layer="93" rot="R90">MC_I3</text>
+<text x="-7.62" y="-10.16" size="1.778" layer="93" rot="R90">MC_I4</text>
 <text x="111.76" y="81.28" size="1.778" layer="93">5V</text>
 <wire x1="99.06" y1="5.08" x2="99.06" y2="-17.78" width="0.1524" layer="93"/>
 <wire x1="99.06" y1="5.08" x2="109.22" y2="5.08" width="0.1524" layer="93"/>
@@ -7382,23 +7403,23 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="71.12" y="-2.54" size="1.778" layer="93">PA10</text>
 <text x="71.12" y="-10.16" size="1.778" layer="93">PA11</text>
 <text x="71.12" y="-17.78" size="1.778" layer="93">PA12</text>
-<text x="-10.16" y="-10.16" size="1.778" layer="93" rot="R90">MC2_ENA</text>
-<text x="-7.62" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I1</text>
-<text x="-5.08" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I2</text>
-<text x="2.54" y="-10.16" size="1.778" layer="93" rot="R90">MC2_ENB</text>
+<text x="20.32" y="71.12" size="1.778" layer="93">MC2_ENA</text>
+<text x="-5.08" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I1</text>
+<text x="2.54" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I2</text>
+<text x="20.32" y="73.66" size="1.778" layer="93">MC2_ENB</text>
 <text x="5.08" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I3</text>
 <text x="7.62" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I4</text>
-<text x="-33.02" y="35.56" size="1.778" layer="93">Servo_in</text>
+<text x="20.32" y="25.4" size="1.778" layer="93">Servo_in</text>
 <text x="66.04" y="116.84" size="1.778" layer="93">12V</text>
 <text x="66.04" y="91.44" size="1.778" layer="93">GND</text>
 <text x="78.74" y="119.38" size="1.778" layer="93">Motor Controller</text>
 <wire x1="76.2" y1="111.76" x2="68.58" y2="111.76" width="0.1524" layer="93"/>
 <wire x1="76.2" y1="109.22" x2="68.58" y2="109.22" width="0.1524" layer="93"/>
-<text x="68.58" y="104.14" size="1.778" layer="93">PB4</text>
-<text x="68.58" y="101.6" size="1.778" layer="93">PB6</text>
-<text x="68.58" y="109.22" size="1.778" layer="93">PB7</text>
-<text x="68.58" y="99.06" size="1.778" layer="93">PB8</text>
-<text x="68.58" y="96.52" size="1.778" layer="93">PB9</text>
+<text x="66.04" y="101.6" size="1.778" layer="93">PB4</text>
+<text x="66.04" y="111.76" size="1.778" layer="93">PB6</text>
+<text x="66.04" y="109.22" size="1.778" layer="93">PB7</text>
+<text x="66.04" y="76.2" size="1.778" layer="93">PB8</text>
+<text x="66.04" y="73.66" size="1.778" layer="93">PB9</text>
 <text x="111.76" y="104.14" size="1.778" layer="93">M1+</text>
 <text x="111.76" y="101.6" size="1.778" layer="93">M1-</text>
 <text x="111.76" y="99.06" size="1.778" layer="93">M2+</text>
@@ -7406,10 +7427,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="111.76" y="116.84" size="1.778" layer="93">5V</text>
 <text x="78.74" y="119.38" size="1.778" layer="93">Motor Controller 1</text>
 <text x="78.74" y="83.82" size="1.778" layer="93">Motor Controller 2</text>
-<text x="66.04" y="76.2" size="1.778" layer="93">PB10</text>
-<text x="66.04" y="68.58" size="1.778" layer="93">PB11</text>
-<text x="66.04" y="66.04" size="1.778" layer="93">PB12</text>
-<text x="66.04" y="73.66" size="1.778" layer="93">PB13</text>
+<text x="66.04" y="99.06" size="1.778" layer="93">PB10</text>
+<text x="66.04" y="96.52" size="1.778" layer="93">PB11</text>
+<text x="66.04" y="68.58" size="1.778" layer="93">PB12</text>
+<text x="66.04" y="66.04" size="1.778" layer="93">PB13</text>
 <text x="66.04" y="63.5" size="1.778" layer="93">PB14</text>
 <text x="66.04" y="60.96" size="1.778" layer="93">PB15</text>
 <text x="111.76" y="68.58" size="1.778" layer="93">M3+</text>
@@ -7455,35 +7476,16 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="-88.9" y1="114.3" x2="-81.28" y2="114.3" width="0.1524" layer="93"/>
 <text x="-83.82" y="129.54" size="1.778" layer="93">5V</text>
 <text x="-83.82" y="114.3" size="1.778" layer="93">GND</text>
-<text x="-83.82" y="124.46" size="1.778" layer="93">PA5</text>
-<text x="-83.82" y="119.38" size="1.778" layer="93">PA6</text>
 <text x="-124.46" y="132.08" size="1.778" layer="93">HC-SR04</text>
-<text x="-38.1" y="33.02" size="1.778" layer="93">Ultrasonic_Trig</text>
-<text x="-38.1" y="30.48" size="1.778" layer="93">Ultrasonic_Echo</text>
-<wire x1="104.14" y1="35.56" x2="111.76" y2="35.56" width="0.1524" layer="93"/>
-<text x="109.22" y="35.56" size="1.778" layer="93">5V</text>
-<wire x1="91.44" y1="17.78" x2="91.44" y2="25.4" width="0.1524" layer="93"/>
-<wire x1="93.98" y1="35.56" x2="81.28" y2="35.56" width="0.1524" layer="93"/>
-<text x="91.44" y="17.78" size="1.778" layer="93" rot="R90">GND</text>
-<text x="81.28" y="35.56" size="1.778" layer="93">PA3</text>
-<text x="66.04" y="38.1" size="1.778" layer="93">Light Sensor</text>
-<text x="-38.1" y="38.1" size="1.778" layer="93">Light Sensor</text>
+<text x="-40.64" y="40.64" size="1.778" layer="93">Ultrasonic_Trig</text>
+<text x="-40.64" y="38.1" size="1.778" layer="93">Ultrasonic_Echo</text>
 <text x="71.12" y="-30.48" size="1.778" layer="93">LS1</text>
-<text x="58.42" y="-33.02" size="1.778" layer="93">PA7</text>
 <text x="71.12" y="-55.88" size="1.778" layer="93">LS2</text>
-<text x="58.42" y="-58.42" size="1.778" layer="93">PA8</text>
-<text x="-30.48" y="27.94" size="1.778" layer="93" ratio="5">LS1</text>
-<text x="20.32" y="25.4" size="1.778" layer="93" ratio="5">LS2</text>
+<text x="-27.94" y="35.56" size="1.778" layer="93" ratio="5">LS1</text>
+<text x="-27.94" y="33.02" size="1.778" layer="93" ratio="5">LS2</text>
 <text x="-83.82" y="-78.74" size="1.778" layer="93" ratio="5">PC12</text>
 <text x="20.32" y="53.34" size="1.778" layer="93" ratio="5">T1</text>
-<text x="68.58" y="111.76" size="1.778" layer="93" ratio="5">PB3</text>
-<text x="58.42" y="129.54" size="1.778" layer="93" ratio="5">GND</text>
-<text x="58.42" y="144.78" size="1.778" layer="93" ratio="5">5V</text>
-<text x="71.12" y="147.32" size="1.778" layer="93" ratio="5">T1</text>
-<text x="58.42" y="137.16" size="1.778" layer="93" ratio="5">PD2</text>
-<wire x1="58.42" y1="144.78" x2="66.04" y2="144.78" width="0.1524" layer="93"/>
-<wire x1="58.42" y1="137.16" x2="66.04" y2="137.16" width="0.1524" layer="93"/>
-<wire x1="58.42" y1="129.54" x2="66.04" y2="129.54" width="0.1524" layer="93"/>
+<text x="66.04" y="104.14" size="1.778" layer="93" ratio="5">PB3</text>
 <wire x1="-88.9" y1="-71.12" x2="-81.28" y2="-71.12" width="0.1524" layer="93"/>
 <wire x1="-88.9" y1="-78.74" x2="-81.28" y2="-78.74" width="0.1524" layer="93"/>
 <wire x1="-88.9" y1="-86.36" x2="-81.28" y2="-86.36" width="0.1524" layer="93"/>
@@ -7510,7 +7512,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="-93.98" y="43.18" size="1.778" layer="97" ratio="5">GND</text>
 <text x="58.42" y="-48.26" size="1.778" layer="91">3.3V</text>
 <text x="58.42" y="-73.66" size="1.778" layer="91">3.3V</text>
-<text x="-83.82" y="96.52" size="1.778" layer="91">PA4</text>
+<text x="-83.82" y="119.38" size="1.778" layer="91">PA3</text>
+<text x="-83.82" y="124.46" size="1.778" layer="91">PA2</text>
+<text x="-83.82" y="96.52" size="1.778" layer="91">PA8</text>
+<text x="58.42" y="-33.02" size="1.778" layer="91">PA4</text>
+<text x="58.42" y="-58.42" size="1.778" layer="91">PA5</text>
 </plain>
 <moduleinsts>
 <moduleinst name="IR1" module="IR" x="-109.22" y="25.4">
@@ -7537,17 +7543,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <moduleinst name="LIMITSWITCH2" module="LIMITSWITCH" x="86.36" y="-66.04">
 <attribute name="NAME" x="86.36" y="-66.04" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
-<moduleinst name="TEMPERATURE1" module="TEMPERATURE" x="86.36" y="137.16" rot="MR0">
-<attribute name="NAME" x="86.36" y="137.16" size="2.032" layer="95" rot="MR0" align="bottom-center"/>
-</moduleinst>
 <moduleinst name="IR5" module="IR" x="-109.22" y="-78.74">
 <attribute name="NAME" x="-109.22" y="-78.74" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
-<instance part="PH1" gate="G$1" x="99.06" y="35.56" smashed="yes" rot="R270">
-<attribute name="NAME" x="99.06" y="33.02" size="1.778" layer="95" rot="R270"/>
-</instance>
 <instance part="DIS1" gate="G$1" x="-111.76" y="60.96" smashed="yes" rot="R90">
 <attribute name="NAME" x="-125.73" y="40.64" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-125.73" y="59.69" size="1.778" layer="96" rot="R90"/>
@@ -7589,10 +7589,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </instance>
 <instance part="IC2" gate="L298" x="91.44" y="101.6" smashed="yes">
 <attribute name="VALUE" x="78.74" y="86.36" size="1.778" layer="96"/>
-</instance>
-<instance part="R2A2" gate="G$1" x="91.44" y="30.48" smashed="yes" rot="R270">
-<attribute name="NAME" x="92.9386" y="34.29" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="88.138" y="34.29" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -7899,16 +7895,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <net name="N$61" class="0">
 <segment>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="5.08" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$66" class="0">
-<segment>
-<wire x1="-33.02" y1="33.02" x2="-25.4" y2="33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$67" class="0">
-<segment>
-<wire x1="-33.02" y1="30.48" x2="-25.4" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$21" class="0">
