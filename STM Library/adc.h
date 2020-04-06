@@ -30,3 +30,15 @@ void AdcInit(void);
 * Waits for end of conversion signal, returns the data for the ADC Channel
 */
 uint32_t ConvertAdcChannel(uint8_t channel);
+
+/**
+* Name: convert_motor_speed
+* Input: 
+* 	uint8_t channel: ADC Potentiometer Reading
+* Return: 
+* 	uint32_t: Converted Potentiometer Reading in Range 10-95
+*
+* Description: 
+* This maps the Potentiometer reading between 10-95 for controlling the motors
+*/
+uint16_t convert_motor_speed (uint32_t potentiometer_reading);

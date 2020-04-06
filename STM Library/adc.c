@@ -29,3 +29,11 @@ uint32_t ConvertAdcChannel(uint8_t channel){
 	//read and return data
 	return ADC1->DR;
 }
+
+uint16_t convert_motor_speed (uint32_t potentiometer_reading)
+{
+	// converts values from 0xfff-0x0 -> 0xa-0x5f or 10 - 95 (decimal)
+	uint16_t output = 0xfff - potentiometer_reading;
+	output = (uint16_t) (output / 48) + 10;
+	return output;
+}

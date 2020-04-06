@@ -3,7 +3,7 @@
 #include "lcd.h"
 #include "pwm.h"
 #include "interrupts.h"
-#include <string.h>
+#include "adc.h"
 uint8_t count = 0;
 uint8_t count2 = 0;
 int time = 0;
@@ -13,10 +13,8 @@ int main(){
 	ConfigureLeds();
 	LcdInit();
 	
-	Tim4PwmInit(100, 90);
-	ConfigureMotorInputs();
-	MoveForward();	
 	ConfigureIrSensors();
+	
 	
 	/*
 	GPIOA->CRL &=0xFFFFFF0F;
@@ -29,25 +27,32 @@ int main(){
 	uint16_t pulsewidth = 15;
 	Tim1Ch1PwmInit(period, pulsewidth);
 	
+	AdcInit();
+	uint32_t potentiometer =0;
+	potentiometer = ConvertAdcChannel(2);
+	uint16_t motorPulseWidth = 0;
+	motorPulseWidth = convert_motor_speed(potentiometer);
+	Tim4PwmInit(100, motorPulseWidth);
+	ConfigureMotorInputs();
+	
 	while (1){
 		MoveForward();
 		uint8_t ir1 = ReadIR(1);
 		uint8_t ir2 = ReadIR(2);
 		uint8_t ir3 = ReadIR(5);
 		
-		PrintHexToLcd(ir1);
-		PrintHexToLcd(ir2);
-		PrintHexToLcd(ir3);
-		
 		LcdFirstLine();
+		potentiometer = ConvertAdcChannel(2);
+		motorPulseWidth = convert_motor_speed(potentiometer);
+		SetTim4DutyCycle(motorPulseWidth);
 		
+		OutputRegisterValue(motorPulseWidth);
 		pulsewidth = 15;
 		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);
 		pulsewidth = 30;
 		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);
-		MoveBackward();
 		pulsewidth = 45;
 		SetTim1DutyCycle(pulsewidth);
 		Delay(5000000);
