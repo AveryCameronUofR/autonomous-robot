@@ -35,11 +35,12 @@ void BlinkLeds(void){
 }
 
 void ConfigureIrSensors(){
-	GPIOC->CRH &= 0xFFF44444;
+	GPIOC->CRH &= 0xFFF0FF00;
+	GPIOC->CRH |= 0x00040044;
 }
 
 uint8_t ReadIR(uint8_t sensor){
-	return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor);
+	return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor) & 0x1;
 }
 
 void ConfigureMotorInputs(){
