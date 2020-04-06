@@ -43,7 +43,8 @@ void Tim4PwmInit(uint16_t period, uint16_t pulsewidth){
 	//set PB6-9 to AF Output
 	GPIOB->CRL &= 0x00FFFFFF;
 	GPIOB->CRL |= 0xBB000000;
-	
+	GPIOB->CRH &= 0xFFFFFF00;
+	GPIOB->CRH |= 0x000000BB;
 	//enable timer 4
 	TIM4->CR1 |= TIM_CR1_CEN;
 	//output idle state oc1 = 1 when moe = 0 for the channels
