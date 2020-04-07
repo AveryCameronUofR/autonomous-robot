@@ -4,6 +4,7 @@
 #include "pwm.h"
 #include "interrupts.h"
 #include "adc.h"
+#include <stdbool.h>
 uint8_t count = 0;
 uint8_t count2 = 0;
 int time = 0;
@@ -41,6 +42,10 @@ int main(){
 		uint8_t ir2 = ReadIR(2);
 		uint8_t ir3 = ReadIR(5);
 		
+		if (ir2 != 1){
+			TurnLeft();
+			Delay(2500000);
+		}
 		LcdFirstLine();
 		potentiometer = ConvertAdcChannel(2);
 		motorPulseWidth = convert_motor_speed(potentiometer);
@@ -55,7 +60,6 @@ int main(){
 		Delay(5000000);
 		pulsewidth = 45;
 		SetTim1DutyCycle(pulsewidth);
-		Delay(5000000);
 		Delay(5000000);
 		
 		//UltraSonic Sensor Code 
