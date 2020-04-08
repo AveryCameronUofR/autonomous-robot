@@ -111,3 +111,23 @@ void MoveForward(void);
 * and off PB0, PB10, PB12, and PB14
 */
 void MoveBackward(void);
+
+/**
+* Name: MoveForward
+* Input: None
+* Output: None
+*
+* Turns on motors pins PB3, PB10, PB13, and PB 15 
+* and off PB4, PB11, PB12, and PB14
+*/
+void TurnRight(void);
+
+/**
+* Name: TurnLeft
+* Input: None
+* Output: None
+*
+* Turns on motors pins PB4, PB11, PB12, and PB 14
+* and off PB0, PB10, PB13, and PB15
+*/
+void TurnLeft(void);
