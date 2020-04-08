@@ -7346,28 +7346,28 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="5.08" y="2.54" size="1.778" layer="96" rot="R90">PB14</text>
 <text x="7.62" y="2.54" size="1.778" layer="96" rot="R90">PB15</text>
 <text x="-10.16" y="83.82" size="1.778" layer="93">STM32F100RB</text>
-<wire x1="-101.6" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="53.34" x2="-88.9" y2="53.34" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="55.88" x2="-88.9" y2="55.88" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="58.42" x2="-88.9" y2="58.42" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="60.96" x2="-88.9" y2="60.96" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="63.5" x2="-88.9" y2="63.5" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="66.04" x2="-88.9" y2="66.04" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="68.58" x2="-88.9" y2="68.58" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="71.12" x2="-88.9" y2="71.12" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="73.66" x2="-88.9" y2="73.66" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="76.2" x2="-88.9" y2="76.2" width="0.1524" layer="93"/>
-<text x="-93.98" y="50.8" size="1.778" layer="95">PB0</text>
-<text x="-93.98" y="55.88" size="1.778" layer="95">PB1</text>
-<text x="-93.98" y="53.34" size="1.778" layer="95">PB5</text>
-<text x="-93.98" y="58.42" size="1.778" layer="95">PC0</text>
-<text x="-93.98" y="60.96" size="1.778" layer="95">PC1</text>
-<text x="-93.98" y="63.5" size="1.778" layer="95">PC2</text>
-<text x="-93.98" y="66.04" size="1.778" layer="95">PC3</text>
-<text x="-93.98" y="68.58" size="1.778" layer="95">PC4</text>
-<text x="-93.98" y="71.12" size="1.778" layer="95">PC5</text>
-<text x="-93.98" y="73.66" size="1.778" layer="95">PC6</text>
-<text x="-93.98" y="76.2" size="1.778" layer="95">PC7</text>
+<wire x1="-104.14" y1="35.56" x2="-91.44" y2="35.56" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="38.1" x2="-91.44" y2="38.1" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="40.64" x2="-91.44" y2="40.64" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="43.18" x2="-91.44" y2="43.18" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="45.72" x2="-91.44" y2="45.72" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="48.26" x2="-91.44" y2="48.26" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="50.8" x2="-91.44" y2="50.8" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="53.34" x2="-91.44" y2="53.34" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="55.88" x2="-91.44" y2="55.88" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="58.42" x2="-91.44" y2="58.42" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="60.96" x2="-91.44" y2="60.96" width="0.1524" layer="93"/>
+<text x="-96.52" y="35.56" size="1.778" layer="95">PB0</text>
+<text x="-96.52" y="40.64" size="1.778" layer="95">PB1</text>
+<text x="-96.52" y="38.1" size="1.778" layer="95">PB5</text>
+<text x="-96.52" y="43.18" size="1.778" layer="95">PC0</text>
+<text x="-96.52" y="45.72" size="1.778" layer="95">PC1</text>
+<text x="-96.52" y="48.26" size="1.778" layer="95">PC2</text>
+<text x="-96.52" y="50.8" size="1.778" layer="95">PC3</text>
+<text x="-96.52" y="53.34" size="1.778" layer="95">PC4</text>
+<text x="-96.52" y="55.88" size="1.778" layer="95">PC5</text>
+<text x="-96.52" y="58.42" size="1.778" layer="95">PC6</text>
+<text x="-96.52" y="60.96" size="1.778" layer="95">PC7</text>
 <text x="-30.48" y="55.88" size="1.778" layer="93">LCD0</text>
 <text x="-30.48" y="53.34" size="1.778" layer="93">LCD1</text>
 <text x="-30.48" y="50.8" size="1.778" layer="93">LCD2</text>
@@ -7396,13 +7396,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="-10.16" y="-10.16" size="1.778" layer="93" rot="R90">MC_I3</text>
 <text x="-7.62" y="-10.16" size="1.778" layer="93" rot="R90">MC_I4</text>
 <text x="111.76" y="81.28" size="1.778" layer="93">5V</text>
-<wire x1="99.06" y1="5.08" x2="99.06" y2="-17.78" width="0.1524" layer="93"/>
-<wire x1="99.06" y1="5.08" x2="109.22" y2="5.08" width="0.1524" layer="93"/>
-<text x="106.68" y="5.08" size="1.778" layer="93">3.3V</text>
-<text x="71.12" y="5.08" size="1.778" layer="93">PA9</text>
-<text x="71.12" y="-2.54" size="1.778" layer="93">PA10</text>
-<text x="71.12" y="-10.16" size="1.778" layer="93">PA11</text>
-<text x="71.12" y="-17.78" size="1.778" layer="93">PA12</text>
+<wire x1="101.6" y1="40.64" x2="101.6" y2="17.78" width="0.1524" layer="93"/>
+<wire x1="101.6" y1="40.64" x2="111.76" y2="40.64" width="0.1524" layer="93"/>
+<text x="109.22" y="40.64" size="1.778" layer="93">3.3V</text>
+<text x="73.66" y="40.64" size="1.778" layer="93">PA9</text>
+<text x="73.66" y="33.02" size="1.778" layer="93">PA10</text>
+<text x="73.66" y="25.4" size="1.778" layer="93">PA11</text>
+<text x="73.66" y="17.78" size="1.778" layer="93">PA12</text>
 <text x="20.32" y="71.12" size="1.778" layer="93">MC2_ENA</text>
 <text x="-5.08" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I1</text>
 <text x="2.54" y="-10.16" size="1.778" layer="93" rot="R90">MC2_I2</text>
@@ -7439,153 +7439,110 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="111.76" y="60.96" size="1.778" layer="93">M4-</text>
 <text x="20.32" y="20.32" size="1.778" layer="93">IR1</text>
 <text x="20.32" y="22.86" size="1.778" layer="93">IR2</text>
-<text x="20.32" y="45.72" size="1.778" layer="93">IR3</text>
-<text x="20.32" y="48.26" size="1.778" layer="93">IR4</text>
-<wire x1="-88.9" y1="33.02" x2="-81.28" y2="33.02" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="25.4" x2="-81.28" y2="25.4" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="17.78" x2="-81.28" y2="17.78" width="0.1524" layer="93"/>
-<text x="-83.82" y="33.02" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="17.78" size="1.778" layer="93">GND</text>
-<text x="-83.82" y="25.4" size="1.778" layer="93">PC8</text>
-<wire x1="-88.9" y1="5.08" x2="-81.28" y2="5.08" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-2.54" x2="-81.28" y2="-2.54" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-10.16" x2="-81.28" y2="-10.16" width="0.1524" layer="93"/>
-<text x="-83.82" y="5.08" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="-10.16" size="1.778" layer="93">GND</text>
-<wire x1="-88.9" y1="-20.32" x2="-81.28" y2="-20.32" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-27.94" x2="-81.28" y2="-27.94" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-35.56" x2="-81.28" y2="-35.56" width="0.1524" layer="93"/>
-<text x="-83.82" y="-20.32" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="-35.56" size="1.778" layer="93">GND</text>
-<wire x1="-88.9" y1="-45.72" x2="-81.28" y2="-45.72" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-53.34" x2="-81.28" y2="-53.34" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-60.96" x2="-81.28" y2="-60.96" width="0.1524" layer="93"/>
-<text x="-83.82" y="-45.72" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="-60.96" size="1.778" layer="93">GND</text>
-<text x="-83.82" y="-2.54" size="1.778" layer="93">PC9</text>
-<text x="-83.82" y="-27.94" size="1.778" layer="93">PC10</text>
-<text x="-83.82" y="-53.34" size="1.778" layer="93">PC11</text>
-<wire x1="-88.9" y1="101.6" x2="-81.28" y2="101.6" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="88.9" x2="-81.28" y2="88.9" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="96.52" x2="-81.28" y2="96.52" width="0.1524" layer="93"/>
-<text x="-83.82" y="101.6" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="88.9" size="1.778" layer="93">GND</text>
-<wire x1="-88.9" y1="129.54" x2="-81.28" y2="129.54" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="124.46" x2="-81.28" y2="124.46" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="119.38" x2="-81.28" y2="119.38" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="114.3" x2="-81.28" y2="114.3" width="0.1524" layer="93"/>
-<text x="-83.82" y="129.54" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="114.3" size="1.778" layer="93">GND</text>
-<text x="-124.46" y="132.08" size="1.778" layer="93">HC-SR04</text>
-<text x="-40.64" y="40.64" size="1.778" layer="93">Ultrasonic_Trig</text>
+<wire x1="-91.44" y1="17.78" x2="-83.82" y2="17.78" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="10.16" x2="-83.82" y2="10.16" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="2.54" x2="-83.82" y2="2.54" width="0.1524" layer="93"/>
+<text x="-86.36" y="17.78" size="1.778" layer="93">5V</text>
+<text x="-86.36" y="2.54" size="1.778" layer="93">GND</text>
+<text x="-86.36" y="10.16" size="1.778" layer="93">PC8</text>
+<wire x1="-91.44" y1="-10.16" x2="-83.82" y2="-10.16" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="-17.78" x2="-83.82" y2="-17.78" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="-25.4" x2="-83.82" y2="-25.4" width="0.1524" layer="93"/>
+<text x="-86.36" y="-10.16" size="1.778" layer="93">5V</text>
+<text x="-86.36" y="-25.4" size="1.778" layer="93">GND</text>
+<text x="-86.36" y="-17.78" size="1.778" layer="93">PC9</text>
+<wire x1="-91.44" y1="86.36" x2="-83.82" y2="86.36" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="73.66" x2="-83.82" y2="73.66" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="81.28" x2="-83.82" y2="81.28" width="0.1524" layer="93"/>
+<text x="-86.36" y="86.36" size="1.778" layer="93">5V</text>
+<text x="-86.36" y="73.66" size="1.778" layer="93">GND</text>
+<wire x1="-91.44" y1="114.3" x2="-83.82" y2="114.3" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="109.22" x2="-83.82" y2="109.22" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="104.14" x2="-83.82" y2="104.14" width="0.1524" layer="93"/>
+<wire x1="-91.44" y1="99.06" x2="-83.82" y2="99.06" width="0.1524" layer="93"/>
+<text x="-86.36" y="114.3" size="1.778" layer="93">5V</text>
+<text x="-86.36" y="99.06" size="1.778" layer="93">GND</text>
+<text x="-127" y="116.84" size="1.778" layer="93">HC-SR04</text>
+<text x="-40.64" y="43.18" size="1.778" layer="93">Ultrasonic_Trig</text>
 <text x="-40.64" y="38.1" size="1.778" layer="93">Ultrasonic_Echo</text>
-<text x="71.12" y="-30.48" size="1.778" layer="93">LS1</text>
-<text x="71.12" y="-55.88" size="1.778" layer="93">LS2</text>
-<text x="-27.94" y="35.56" size="1.778" layer="93" ratio="5">LS1</text>
-<text x="-27.94" y="33.02" size="1.778" layer="93" ratio="5">LS2</text>
-<text x="-83.82" y="-78.74" size="1.778" layer="93" ratio="5">PC12</text>
 <text x="20.32" y="53.34" size="1.778" layer="93" ratio="5">T1</text>
 <text x="66.04" y="104.14" size="1.778" layer="93" ratio="5">PB3</text>
-<wire x1="-88.9" y1="-71.12" x2="-81.28" y2="-71.12" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-78.74" x2="-81.28" y2="-78.74" width="0.1524" layer="93"/>
-<wire x1="-88.9" y1="-86.36" x2="-81.28" y2="-86.36" width="0.1524" layer="93"/>
-<text x="-83.82" y="-71.12" size="1.778" layer="93">5V</text>
-<text x="-83.82" y="-86.36" size="1.778" layer="93">GND</text>
-<text x="20.32" y="50.8" size="1.778" layer="93" ratio="5">IR5</text>
-<wire x1="-53.34" y1="-104.14" x2="132.08" y2="-104.14" width="0.1524" layer="97"/>
-<wire x1="132.08" y1="-104.14" x2="132.08" y2="-129.54" width="0.1524" layer="97"/>
-<wire x1="132.08" y1="-129.54" x2="-53.34" y2="-129.54" width="0.1524" layer="97"/>
-<wire x1="-53.34" y1="-129.54" x2="-132.08" y2="-129.54" width="0.1524" layer="97"/>
-<wire x1="-132.08" y1="-129.54" x2="-132.08" y2="-116.84" width="0.1524" layer="97"/>
-<wire x1="-132.08" y1="-116.84" x2="-132.08" y2="-104.14" width="0.1524" layer="97"/>
-<wire x1="-132.08" y1="-104.14" x2="-53.34" y2="-104.14" width="0.1524" layer="97"/>
-<wire x1="-53.34" y1="-104.14" x2="-53.34" y2="-116.84" width="0.1524" layer="97"/>
-<wire x1="-53.34" y1="-116.84" x2="-53.34" y2="-129.54" width="0.1524" layer="97"/>
-<wire x1="-132.08" y1="-116.84" x2="-53.34" y2="-116.84" width="0.1524" layer="97"/>
-<text x="-132.08" y="-106.68" size="1.778" layer="97" ratio="5">Project:</text>
-<text x="-127" y="-111.76" size="1.778" layer="97" ratio="5">ENEL 387 Robot Schematic</text>
-<text x="-132.08" y="-119.38" size="1.778" layer="97" ratio="5">Title:</text>
-<text x="-127" y="-124.46" size="1.778" layer="97" ratio="5">Robot Connections</text>
-<wire x1="-101.6" y1="45.72" x2="-88.9" y2="45.72" width="0.1524" layer="93"/>
-<wire x1="-101.6" y1="43.18" x2="-88.9" y2="43.18" width="0.1524" layer="93"/>
-<text x="-93.98" y="45.72" size="1.778" layer="97" ratio="5">5V</text>
-<text x="-93.98" y="43.18" size="1.778" layer="97" ratio="5">GND</text>
-<text x="58.42" y="-48.26" size="1.778" layer="91">3.3V</text>
-<text x="58.42" y="-73.66" size="1.778" layer="91">3.3V</text>
-<text x="-83.82" y="119.38" size="1.778" layer="91">PA3</text>
-<text x="-83.82" y="124.46" size="1.778" layer="91">PA2</text>
-<text x="-83.82" y="96.52" size="1.778" layer="91">PA8</text>
-<text x="58.42" y="-33.02" size="1.778" layer="91">PA4</text>
-<text x="58.42" y="-58.42" size="1.778" layer="91">PA5</text>
+<wire x1="-55.88" y1="-35.56" x2="129.54" y2="-35.56" width="0.1524" layer="97"/>
+<wire x1="129.54" y1="-35.56" x2="129.54" y2="-60.96" width="0.1524" layer="97"/>
+<wire x1="129.54" y1="-60.96" x2="-55.88" y2="-60.96" width="0.1524" layer="97"/>
+<wire x1="-55.88" y1="-60.96" x2="-134.62" y2="-60.96" width="0.1524" layer="97"/>
+<wire x1="-134.62" y1="-60.96" x2="-134.62" y2="-48.26" width="0.1524" layer="97"/>
+<wire x1="-134.62" y1="-48.26" x2="-134.62" y2="-35.56" width="0.1524" layer="97"/>
+<wire x1="-134.62" y1="-35.56" x2="-55.88" y2="-35.56" width="0.1524" layer="97"/>
+<wire x1="-55.88" y1="-35.56" x2="-55.88" y2="-48.26" width="0.1524" layer="97"/>
+<wire x1="-55.88" y1="-48.26" x2="-55.88" y2="-60.96" width="0.1524" layer="97"/>
+<wire x1="-134.62" y1="-48.26" x2="-55.88" y2="-48.26" width="0.1524" layer="97"/>
+<text x="-134.62" y="-38.1" size="1.778" layer="97" ratio="5">Project:</text>
+<text x="-129.54" y="-43.18" size="1.778" layer="97" ratio="5">ENEL 387 Robot Schematic</text>
+<text x="-134.62" y="-50.8" size="1.778" layer="97" ratio="5">Title:</text>
+<text x="-129.54" y="-55.88" size="1.778" layer="97" ratio="5">Robot Connections</text>
+<wire x1="-104.14" y1="30.48" x2="-91.44" y2="30.48" width="0.1524" layer="93"/>
+<wire x1="-104.14" y1="27.94" x2="-91.44" y2="27.94" width="0.1524" layer="93"/>
+<text x="-96.52" y="30.48" size="1.778" layer="97" ratio="5">5V</text>
+<text x="-96.52" y="27.94" size="1.778" layer="97" ratio="5">GND</text>
+<text x="-86.36" y="104.14" size="1.778" layer="91">PA3</text>
+<text x="-86.36" y="109.22" size="1.778" layer="91">PA1</text>
+<text x="-86.36" y="81.28" size="1.778" layer="91">PA8</text>
+<text x="-40.64" y="40.64" size="1.778" layer="91">Potentiometer</text>
 </plain>
 <moduleinsts>
-<moduleinst name="IR1" module="IR" x="-109.22" y="25.4">
-<attribute name="NAME" x="-109.22" y="25.4" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="IR1" module="IR" x="-111.76" y="10.16">
+<attribute name="NAME" x="-111.76" y="10.16" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
-<moduleinst name="IR2" module="IR" x="-109.22" y="-2.54">
-<attribute name="NAME" x="-109.22" y="-2.54" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="IR2" module="IR" x="-111.76" y="-17.78">
+<attribute name="NAME" x="-111.76" y="-17.78" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
-<moduleinst name="IR3" module="IR" x="-109.22" y="-27.94">
-<attribute name="NAME" x="-109.22" y="-27.94" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="SERVO1" module="SERVO" x="-111.76" y="81.28">
+<attribute name="NAME" x="-111.76" y="81.28" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
-<moduleinst name="IR4" module="IR" x="-109.22" y="-53.34">
-<attribute name="NAME" x="-109.22" y="-53.34" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="SERVO1" module="SERVO" x="-109.22" y="96.52">
-<attribute name="NAME" x="-109.22" y="96.52" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="UTLRASONIC1" module="UTLRASONIC" x="-109.22" y="121.92">
-<attribute name="NAME" x="-109.22" y="121.92" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="LIMITSWITCH1" module="LIMITSWITCH" x="86.36" y="-40.64">
-<attribute name="NAME" x="86.36" y="-40.64" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="LIMITSWITCH2" module="LIMITSWITCH" x="86.36" y="-66.04">
-<attribute name="NAME" x="86.36" y="-66.04" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="IR5" module="IR" x="-109.22" y="-78.74">
-<attribute name="NAME" x="-109.22" y="-78.74" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="UTLRASONIC1" module="UTLRASONIC" x="-111.76" y="106.68">
+<attribute name="NAME" x="-111.76" y="106.68" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
-<instance part="DIS1" gate="G$1" x="-111.76" y="60.96" smashed="yes" rot="R90">
-<attribute name="NAME" x="-125.73" y="40.64" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-125.73" y="59.69" size="1.778" layer="96" rot="R90"/>
+<instance part="DIS1" gate="G$1" x="-114.3" y="45.72" smashed="yes" rot="R90">
+<attribute name="NAME" x="-128.27" y="25.4" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-128.27" y="44.45" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="IC1" gate="L298" x="91.44" y="66.04" smashed="yes">
 <attribute name="VALUE" x="78.74" y="50.8" size="1.778" layer="96"/>
 </instance>
-<instance part="LED1" gate="G$1" x="86.36" y="5.08" smashed="yes" rot="R270">
-<attribute name="NAME" x="81.788" y="1.524" size="1.778" layer="95"/>
-<attribute name="VALUE" x="81.788" y="-0.635" size="1.778" layer="96"/>
+<instance part="LED1" gate="G$1" x="88.9" y="40.64" smashed="yes" rot="R270">
+<attribute name="NAME" x="84.328" y="37.084" size="1.778" layer="95"/>
+<attribute name="VALUE" x="84.328" y="34.925" size="1.778" layer="96"/>
 </instance>
-<instance part="LED2" gate="G$1" x="86.36" y="-2.54" smashed="yes" rot="R270">
-<attribute name="NAME" x="81.788" y="-6.096" size="1.778" layer="95"/>
-<attribute name="VALUE" x="81.788" y="-8.255" size="1.778" layer="96"/>
+<instance part="LED2" gate="G$1" x="88.9" y="33.02" smashed="yes" rot="R270">
+<attribute name="NAME" x="84.328" y="29.464" size="1.778" layer="95"/>
+<attribute name="VALUE" x="84.328" y="27.305" size="1.778" layer="96"/>
 </instance>
-<instance part="LED3" gate="G$1" x="86.36" y="-10.16" smashed="yes" rot="R270">
-<attribute name="NAME" x="81.788" y="-13.716" size="1.778" layer="95"/>
-<attribute name="VALUE" x="81.788" y="-15.875" size="1.778" layer="96"/>
+<instance part="LED3" gate="G$1" x="88.9" y="25.4" smashed="yes" rot="R270">
+<attribute name="NAME" x="84.328" y="21.844" size="1.778" layer="95"/>
+<attribute name="VALUE" x="84.328" y="19.685" size="1.778" layer="96"/>
 </instance>
-<instance part="LED4" gate="G$1" x="86.36" y="-17.78" smashed="yes" rot="R270">
-<attribute name="NAME" x="81.788" y="-21.336" size="1.778" layer="95"/>
-<attribute name="VALUE" x="81.788" y="-23.495" size="1.778" layer="96"/>
+<instance part="LED4" gate="G$1" x="88.9" y="17.78" smashed="yes" rot="R270">
+<attribute name="NAME" x="84.328" y="14.224" size="1.778" layer="95"/>
+<attribute name="VALUE" x="84.328" y="12.065" size="1.778" layer="96"/>
 </instance>
-<instance part="R2D" gate="G$1" x="93.98" y="-17.78" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.79" y="-19.2786" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="-14.478" size="1.778" layer="96" rot="R180"/>
+<instance part="R2D" gate="G$1" x="96.52" y="17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="16.2814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="100.33" y="21.082" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R2C" gate="G$1" x="93.98" y="-10.16" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.79" y="-11.6586" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="-6.858" size="1.778" layer="96" rot="R180"/>
+<instance part="R2C" gate="G$1" x="96.52" y="25.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="23.9014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="100.33" y="28.702" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R2B" gate="G$1" x="93.98" y="-2.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.79" y="-4.0386" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="0.762" size="1.778" layer="96" rot="R180"/>
+<instance part="R2B" gate="G$1" x="96.52" y="33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="31.5214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="100.33" y="36.322" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R2A" gate="G$1" x="93.98" y="5.08" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.79" y="3.5814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="8.382" size="1.778" layer="96" rot="R180"/>
+<instance part="R2A" gate="G$1" x="96.52" y="40.64" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="39.1414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="100.33" y="43.942" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IC2" gate="L298" x="91.44" y="101.6" smashed="yes">
 <attribute name="VALUE" x="78.74" y="86.36" size="1.778" layer="96"/>
@@ -7989,25 +7946,25 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="N$84" class="0">
 <segment>
-<wire x1="73.66" y1="-17.78" x2="81.28" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="17.78" x2="83.82" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="LED4" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$85" class="0">
 <segment>
-<wire x1="73.66" y1="-10.16" x2="81.28" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="25.4" x2="83.82" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="LED3" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$86" class="0">
 <segment>
-<wire x1="73.66" y1="-2.54" x2="81.28" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="33.02" x2="83.82" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="LED2" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$87" class="0">
 <segment>
-<wire x1="73.66" y1="5.08" x2="81.28" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="40.64" x2="83.82" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
 </segment>
 </net>
@@ -8075,36 +8032,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <segment>
 <wire x1="106.68" y1="96.52" x2="114.3" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="L298" pin="OUT4"/>
-</segment>
-</net>
-<net name="N$62" class="0">
-<segment>
-<wire x1="58.42" y1="-48.26" x2="66.04" y2="-48.26" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$63" class="0">
-<segment>
-<wire x1="58.42" y1="-38.1" x2="66.04" y2="-38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$64" class="0">
-<segment>
-<wire x1="58.42" y1="-33.02" x2="66.04" y2="-33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$65" class="0">
-<segment>
-<wire x1="58.42" y1="-73.66" x2="66.04" y2="-73.66" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$70" class="0">
-<segment>
-<wire x1="58.42" y1="-63.5" x2="66.04" y2="-63.5" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$99" class="0">
-<segment>
-<wire x1="58.42" y1="-58.42" x2="66.04" y2="-58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
