@@ -433,21 +433,6 @@
               <FilePath>.\STM Library\pwm.h</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STM Library\usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>usart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\STM Library\usart.h</FilePath>
-            </File>
-            <File>
-              <FileName>Servo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STM Library\Servo.c</FilePath>
-            </File>
-            <File>
               <FileName>interrupts.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\STM Library\interrupts.c</FilePath>
@@ -456,6 +441,11 @@
               <FileName>interrupts.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\STM Library\interrupts.h</FilePath>
+            </File>
+            <File>
+              <FileName>autonomous.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STM Library\autonomous.c</FilePath>
             </File>
           </Files>
         </Group>
