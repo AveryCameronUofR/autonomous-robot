@@ -62,7 +62,7 @@ int main(){
 			Stop(motorPulseWidth);
 			TurnLeft();
 			Start(motorPulseWidth);
-			Delay(6500000);
+			Delay(4500000);
 			Stop(motorPulseWidth);
 			MoveForward();
 			Start(motorPulseWidth/2);
@@ -122,7 +122,7 @@ int main(){
 			Stop(motorPulseWidth);
 			TurnLeft();
 			Start(motorPulseWidth);
-			Delay(5500000);
+			Delay(4500000);
 			Stop(motorPulseWidth);
 			MoveForward();
 			Start(motorPulseWidth/2.2);

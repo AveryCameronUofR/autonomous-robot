@@ -433,16 +433,6 @@
               <FilePath>.\STM Library\pwm.h</FilePath>
             </File>
             <File>
-              <FileName>interrupts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STM Library\interrupts.c</FilePath>
-            </File>
-            <File>
-              <FileName>interrupts.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\STM Library\interrupts.h</FilePath>
-            </File>
-            <File>
               <FileName>autonomous.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\STM Library\autonomous.c</FilePath>
