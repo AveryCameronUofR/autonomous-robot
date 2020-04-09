@@ -2,27 +2,17 @@
 #include "gpio.h"
 #include "lcd.h"
 #include "pwm.h"
-#include "interrupts.h"
 #include "adc.h"
 #include <stdbool.h>
-uint8_t count = 0;
-uint8_t count2 = 0;
-int time = 0;
 int main(){
 	ClockInit();
 	GpioClockInit();
 	ConfigureLeds();
 	LcdInit();
 	
+	ConfigureSwitches();
 	ConfigureIrSensors();
 	
-	
-	/*
-	GPIOA->CRL &=0xFFFFFF0F;
-	GPIOA->CRL |=0x00000030;
-	GPIOA->CRH &=0x0FFFFFFF;
-	GPIOA->CRH |=0x30000000;
-	*/
 	//servo 
 	uint16_t period = 400;
 	uint16_t pulsewidth = 15;
@@ -33,12 +23,16 @@ int main(){
 	potentiometer = ConvertAdcChannel(2);
 	uint16_t motorPulseWidth = 0;
 	motorPulseWidth = convert_motor_speed(potentiometer);
+	
+	//Motor Configuration
 	Tim4PwmInit(100, motorPulseWidth);
 	ConfigureMotorInputs();
 	
 	// IR sensing code
 	uint32_t threshold_to_count = 12500;
 	uint32_t threshold_to_display = 25000;
+	uint32_t thrshold_to_stop = 50000;
+	
 	OutputRegisterValue(threshold_to_display);
 	// the current number of navigation strips counted
 	uint8_t strip_count = 0;
@@ -47,17 +41,37 @@ int main(){
 	uint16_t ir_black_count = 0;
 	uint16_t ir_white_count = 0;
 	
-	uint8_t last_ir1 = 0;
-	uint8_t curr_ir1 = 0;
+	uint8_t last_ir2 = 0;
+	uint8_t curr_ir2 = 0;
 	
 	bool counted_strip = false;
 	bool should_display = false;
-
+	bool exited_start_area = false;
+	bool course_completed = false;
 	while (1){
+		//Update the max motor speed
 		potentiometer = ConvertAdcChannel(2);
 		motorPulseWidth = convert_motor_speed(potentiometer);
-		MoveForward();
-		curr_ir1 = ReadIR(1);
+		
+		//If either of the limit switches are hit
+		if (ReadSwitches() == 1){
+			Stop(motorPulseWidth);
+			MoveBackward();
+			Start(motorPulseWidth);
+			Delay(5000000);
+			Stop(motorPulseWidth);
+			TurnLeft();
+			Start(motorPulseWidth);
+			Delay(6500000);
+			Stop(motorPulseWidth);
+			MoveForward();
+			Start(motorPulseWidth/2);
+		} else {
+			MoveForward();
+			Start(motorPulseWidth/2);
+		}
+		
+		curr_ir2 = ReadIR(2);
 		if (ir_white_count > threshold_to_display && should_display == true) 
 		{
 			// this is where to display to lcd
@@ -68,11 +82,20 @@ int main(){
 			should_display = false;
 			strip_count = false;
 		} else {
-			if (curr_ir1 == last_ir1) 
+			if (curr_ir2 == last_ir2) 
 			{
 				// update the right counter
-				curr_ir1 == 1 ? ir_black_count++ : ir_white_count++;
+				curr_ir2 == 1 ? ir_black_count++ : ir_white_count++;
 				
+				//If white is detected, we have left the start area
+				if (curr_ir2 == 0){
+					exited_start_area = true;
+				}
+				//If we have a large amount of black, we are back at the start
+				if (ir_black_count >= thrshold_to_stop && exited_start_area){
+					course_completed = true;
+				}
+				//Detected black for long enough, count add to count
 				if (ir_black_count >= threshold_to_count && !counted_strip) 
 				{
 					counted_strip =  true;
@@ -87,54 +110,37 @@ int main(){
 				counted_strip = false;
 			}
 		}
-		last_ir1 = curr_ir1;
-		uint8_t ir2 = ReadIR(2);
-		uint8_t ir3 = ReadIR(5);
+		last_ir2 = curr_ir2;
 		
-		if (ir2 != 1){
+		//Object Detected by the IR Sensor
+		uint8_t ir1 = ReadIR(1);
+		if (ir1 != 1) {
+			Stop(motorPulseWidth);
+			MoveBackward();
+			Start(motorPulseWidth);
+			Delay(600000);
+			Stop(motorPulseWidth);
 			TurnLeft();
-			Delay(2500000);
+			Start(motorPulseWidth);
+			Delay(5500000);
+			Stop(motorPulseWidth);
+			MoveForward();
+			Start(motorPulseWidth/2.2);
+		} else {
+			MoveForward();
+			Start(motorPulseWidth/2.2);
 		}
-		
-		motorPulseWidth = convert_motor_speed(0);
-		SetTim4DutyCycle(motorPulseWidth);
-		pulsewidth = 15;
-		SetTim1DutyCycle(pulsewidth);
-		Delay(7000000);		 
+	
+		//Move the Servo
 		pulsewidth = 30;
 		SetTim1DutyCycle(pulsewidth);
-		Delay(7000000);
-		pulsewidth = 45;
-		SetTim1DutyCycle(pulsewidth);
-		Delay(8000000);
-		//UltraSonic Sensor Code 
-	  /*
-		GPIOA->ODR &= 0xFFFFFFFB;
-		Delay(30);
-		GPIOA->ODR |= 0x00000004;
-		Delay(60);
-		GPIOA->ODR &= 0xFFFFFFFB;
-		Delay(1200);
-		count = 0;
 		
-		LcdFirstLine();
-		UpdateLeds(0x2);
 		
-		OutputRegisterValue(GPIOA->ODR);
-		*/
+		if (course_completed){
+			//Exit the Loop
+			break;
+		}
 	}
- }
+}
  
- void SysTick_Handler(){
- }
 
- void EXTI2_IRQHandler(){
-	EXTI->PR |= EXTI_PR_PR2;
-	count += 1;
-	time = 0;
- }
- 
-  void EXTI3_IRQHandler(){
-	EXTI->PR |= EXTI_PR_PR3;
-	count2 += 1;
- }
