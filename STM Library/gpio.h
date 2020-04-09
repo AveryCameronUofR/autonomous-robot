@@ -49,6 +49,24 @@ void UpdateLeds(uint16_t LED_val);
 void BlinkLeds(void);
 
 /**
+* Name: ConfigureSwitches
+* Input: None
+* Output: None
+*
+* Sets up Switches on pins PA3 and 4 as general Input
+*/
+void ConfigureSwitches(void);
+
+/**
+* Name: ReadSwitches
+* Input: None
+* Output: Output of switches or'd together
+*
+* Reads Switches on pins PA3 and 4 and combines the result, if either is pressed, 1 is returned
+*/
+uint8_t ReadSwitches();
+
+/**
 * Name: ConfigureIrSensors
 * Input: None
 * Output: None
@@ -131,3 +149,22 @@ void TurnRight(void);
 * and off PB0, PB10, PB13, and PB15
 */
 void TurnLeft(void);
+
+/**
+* Name: Stop
+* Input: current pulsewidth 
+* Output: None
+*
+* Turns off motors pins PB4, PB11, PB12, and PB 14
+* and PB0, PB10, PB13, and PB15
+*/
+void Stop(uint16_t pulsewidth);
+
+/**
+* Name: Start
+* Input: current pulsewidth 
+* Output: None
+*
+* Updates the pulsewidth gradually
+*/
+void Start(uint16_t pulsewidth);

@@ -8,7 +8,7 @@
 #include "stm32f10x.h"
 #include "gpio.h"
 #include "clock.h"
-
+#include "pwm.h"
 void GpioClockInit(void){
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPDEN;
 }
@@ -34,13 +34,33 @@ void BlinkLeds(void){
 	Delay(delay);
 }
 
+void ConfigureSwitches(){
+	GPIOA->CRL &= 0xFFF00FFF;
+	GPIOA->CRL |= 0x00088000;
+	GPIOA->BSRR = 0x00000018;
+}
+
+uint8_t ReadSwitches(){
+	uint8_t switch1 = ((GPIOA->IDR & GPIO_IDR_IDR3) >> 3) & 1;
+	uint8_t switch2 = ((GPIOA->IDR & GPIO_IDR_IDR4) >> 4) & 1;
+	if (switch1 == 0 || switch2 == 0){
+		return 1;
+	}
+	return 0;
+}
+
 void ConfigureIrSensors(){
-	GPIOC->CRH &= 0xFFF0FF00;
-	GPIOC->CRH |= 0x00040044;
+	GPIOA->CRL &= 0xFF0FFFFF;
+	GPIOA->CRL |= 0x00400000;
+	GPIOC->CRL &= 0xFFFFFFF0;
+	GPIOC->CRL |= 0x00000004;
 }
 
 uint8_t ReadIR(uint8_t sensor){
-	return (GPIOC->IDR & (1 << (7+sensor))) >> (7+sensor) & 0x1;
+	if (sensor == 1){
+		return (GPIOA->IDR & (1 << (5))) >> (5) & 0x1;
+	}
+	return (GPIOC->IDR & (1 << (8))) >> (8) & 0x1;
 }
 
 void ConfigureMotorInputs(){
@@ -114,4 +134,29 @@ void TurnRight(void)
 	
 	GPIOB->ODR |= GPIO_ODR_ODR14;
 	GPIOB->ODR &= ~GPIO_ODR_ODR15;
+}
+
+void Stop(uint16_t pulsewidth)
+{
+	for (int i = pulsewidth; i > 0; i-=5){
+		SetTim4DutyCycle(i);
+	}
+	GPIOB->ODR &= ~GPIO_ODR_ODR3;
+	GPIOB->ODR &= ~GPIO_ODR_ODR4;
+	
+	GPIOB->ODR &= ~GPIO_ODR_ODR10;
+	GPIOB->ODR &= ~GPIO_ODR_ODR11;
+	
+	GPIOB->ODR &= ~GPIO_ODR_ODR12;
+	GPIOB->ODR &= ~GPIO_ODR_ODR13;
+	
+	GPIOB->ODR &= ~GPIO_ODR_ODR14;
+	GPIOB->ODR &= ~GPIO_ODR_ODR15;
+}
+
+void Start(uint16_t pulsewidth)
+{
+	for (int i = 0; i < pulsewidth; i+=5){
+		SetTim4DutyCycle(i);
+	}
 }
