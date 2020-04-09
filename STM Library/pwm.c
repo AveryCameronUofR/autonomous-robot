@@ -10,7 +10,8 @@ void Tim1Ch1PwmInit(uint16_t period, uint16_t pulsewidth){
 	//Enable GPIOA and AFIO
 	RCC->APB2ENR |=  RCC_APB2ENR_IOPAEN | RCC_APB2ENR_AFIOEN | RCC_APB2ENR_TIM1EN;
 	//set PA8 to AF Output
-	GPIOA->CRH = 0xB;
+	GPIOA->CRH &= 0xFFFFFFF0;
+	GPIOA->CRH |= 0x0000000B;
 	
 	//enable timer 1
 	TIM1->CR1 |= TIM_CR1_CEN;
@@ -99,8 +100,8 @@ void SetTim1DutyCycle(uint16_t pulsewidth) {
 }
 
 void SetTim4DutyCycle(uint16_t pulsewidth) {
-	TIM4->CCR1 = pulsewidth;
-	TIM4->CCR2 = pulsewidth;
+	TIM4->CCR1 = pulsewidth -20;
+	TIM4->CCR2 = pulsewidth - 20;
 	TIM4->CCR3 = pulsewidth;
 	TIM4->CCR4 = pulsewidth;
 	//Reinit the counter

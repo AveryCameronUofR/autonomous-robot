@@ -17,7 +17,7 @@ void ConfigureLeds(void){
 	//configures PA9 to PA12 to general purpose output, LED output
 	GPIOA->CRH &= 0xFFF0000F;
 	GPIOA->CRH |= 0x00033330;
-	GPIOA->BSRR = 0x00001E00;
+	GPIOA->BSRR |= 0x00001E00;
 }
 
 void UpdateLeds(uint16_t LED_val){
@@ -37,7 +37,7 @@ void BlinkLeds(void){
 void ConfigureSwitches(){
 	GPIOA->CRL &= 0xFFF00FFF;
 	GPIOA->CRL |= 0x00088000;
-	GPIOA->BSRR = 0x00000018;
+	GPIOA->BSRR |= 0x00000018;
 }
 
 uint8_t ReadSwitches(){
@@ -77,6 +77,7 @@ void ConfigureMotorInputs(){
 
 void MoveForward(void)
 {
+	//Turn on Pin 3, Off Pin 4 for GPIOB
 	GPIOB->ODR |= GPIO_ODR_ODR3;
 	GPIOB->ODR &= ~GPIO_ODR_ODR4;
 	

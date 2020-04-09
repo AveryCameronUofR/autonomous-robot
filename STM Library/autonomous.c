@@ -7,17 +7,18 @@
 int main(){
 	ClockInit();
 	GpioClockInit();
-	ConfigureLeds();
 	LcdInit();
-	
+	LcdClear();
 	ConfigureSwitches();
 	ConfigureIrSensors();
 	
+	ConfigureLeds();
 	//servo 
 	uint16_t period = 400;
 	uint16_t pulsewidth = 15;
 	Tim1Ch1PwmInit(period, pulsewidth);
 	
+	//Potentiometer
 	AdcInit();
 	uint32_t potentiometer =0;
 	potentiometer = ConvertAdcChannel(2);
@@ -29,11 +30,10 @@ int main(){
 	ConfigureMotorInputs();
 	
 	// IR sensing code
-	uint32_t threshold_to_count = 12500;
-	uint32_t threshold_to_display = 25000;
-	uint32_t thrshold_to_stop = 50000;
+	uint32_t threshold_to_count = motorPulseWidth * 2 + 50;
+	uint32_t threshold_to_display = motorPulseWidth * 2 + 2000;
+	uint32_t threshold_to_stop = motorPulseWidth * 2 + 5000;
 	
-	OutputRegisterValue(threshold_to_display);
 	// the current number of navigation strips counted
 	uint8_t strip_count = 0;
 	
@@ -58,17 +58,17 @@ int main(){
 			Stop(motorPulseWidth);
 			MoveBackward();
 			Start(motorPulseWidth);
-			Delay(5000000);
+			Delay(motorPulseWidth * 10000 + 500000);
 			Stop(motorPulseWidth);
 			TurnLeft();
 			Start(motorPulseWidth);
-			Delay(4500000);
+			Delay(motorPulseWidth * 35000 + 500000);
 			Stop(motorPulseWidth);
 			MoveForward();
-			Start(motorPulseWidth/2);
+			Start(motorPulseWidth);
 		} else {
 			MoveForward();
-			Start(motorPulseWidth/2);
+			Start(motorPulseWidth);
 		}
 		
 		curr_ir2 = ReadIR(2);
@@ -76,7 +76,18 @@ int main(){
 		{
 			// this is where to display to lcd
 			LcdFirstLine();
+			//Strip Count counts one extra line, subtract this for the correct number of lines
+			strip_count = strip_count -1;
+			
 			OutputRegisterValue(strip_count);
+			if (strip_count == 1){
+				UpdateLeds(~1);
+			} else if (strip_count == 2){
+				UpdateLeds(~2);
+			}	else if (strip_count == 3){
+				UpdateLeds(~4);
+			}					
+			
 			ir_black_count = 0;
 			ir_white_count = 0;
 			should_display = false;
@@ -86,13 +97,12 @@ int main(){
 			{
 				// update the right counter
 				curr_ir2 == 1 ? ir_black_count++ : ir_white_count++;
-				
 				//If white is detected, we have left the start area
 				if (curr_ir2 == 0){
 					exited_start_area = true;
 				}
 				//If we have a large amount of black, we are back at the start
-				if (ir_black_count >= thrshold_to_stop && exited_start_area){
+				if (ir_black_count >= threshold_to_stop && exited_start_area){
 					course_completed = true;
 				}
 				//Detected black for long enough, count add to count
@@ -118,26 +128,26 @@ int main(){
 			Stop(motorPulseWidth);
 			MoveBackward();
 			Start(motorPulseWidth);
-			Delay(600000);
+			Delay(motorPulseWidth * 10000 + 500000);
 			Stop(motorPulseWidth);
 			TurnLeft();
 			Start(motorPulseWidth);
-			Delay(4500000);
+			Delay(motorPulseWidth * 35000 + 500000);
 			Stop(motorPulseWidth);
 			MoveForward();
-			Start(motorPulseWidth/2.2);
+			Start(motorPulseWidth);
 		} else {
 			MoveForward();
-			Start(motorPulseWidth/2.2);
+			Start(motorPulseWidth);
 		}
 	
 		//Move the Servo
 		pulsewidth = 30;
 		SetTim1DutyCycle(pulsewidth);
 		
-		
 		if (course_completed){
 			//Exit the Loop
+			Stop(motorPulseWidth);
 			break;
 		}
 	}
