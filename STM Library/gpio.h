@@ -2,7 +2,7 @@
  * Name:    gpio.h
  * Description: STM32 gpio functions
  * Version: V1.00
- * Authors: Avery Cameron
+ * Authors: Avery Cameron Raymond Knorr
  *
  *****************************************************************************/
 #include "stm32f10x.h"
@@ -39,21 +39,11 @@ void ConfigureLeds(void);
 void UpdateLeds(uint16_t LED_val);
 
 /**
-* Name: BlinkLeds
-* Input: None
-* Return: None
-*
-* Turns ON or OFF the LEDs on pins PA9-12 for 1 sec
-* Note: Changes current state, will have to be looped for desired blink count
-*/
-void BlinkLeds(void);
-
-/**
 * Name: ConfigureSwitches
 * Input: None
 * Output: None
 *
-* Sets up Switches on pins PA3 and 4 as general Input
+* Sets up Switches on pins PA3 and 4 as as push/pull input
 */
 void ConfigureSwitches(void);
 
@@ -116,7 +106,9 @@ void ConfigureMotorInputs(void);
 * Output: None
 *
 * Turns on motors pins PB3, PB10, PB12, and PB 14 
-* and off PB4, PB11, PB13, and PB15
+* and off PB4, PB11, PB13, and PB15 to set the motors forward.
+* IN1, IN3 of motor controller 1 and 2 (PB3,PB10,PB12,PB14) are on
+* And IN2 and IN4 are off. 
 */
 void MoveForward(void);
 
@@ -127,16 +119,18 @@ void MoveForward(void);
 *
 * Turns on motors pins PB4, PB11, PB13, and PB 15
 * and off PB0, PB10, PB12, and PB14
+* IN2 and 4 on, IN 1 and 3 off
 */
 void MoveBackward(void);
 
 /**
-* Name: MoveForward
+* Name: TurnRight
 * Input: None
 * Output: None
 *
 * Turns on motors pins PB3, PB10, PB13, and PB 15 
 * and off PB4, PB11, PB12, and PB14
+* Turn the Left side motors forward and right side backwards.
 */
 void TurnRight(void);
 
@@ -147,6 +141,7 @@ void TurnRight(void);
 *
 * Turns on motors pins PB4, PB11, PB12, and PB 14
 * and off PB0, PB10, PB13, and PB15
+* Turn the Right side motors forward and Left side backwards.
 */
 void TurnLeft(void);
 

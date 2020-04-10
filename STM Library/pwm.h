@@ -55,7 +55,7 @@ void SetTim1DutyCycle(uint16_t pulsewidth);
 * Return: None
 *
 * Description: 
-* Sets the pulsewidth for TIM4
+* Sets the pulsewidth for all channels on TIM4 
 * Notes:
 */
 void SetTim4DutyCycle(uint16_t pulsewidth);

@@ -22,6 +22,7 @@ uint32_t ConvertAdcChannel(uint8_t channel){
 	ADC1->CR2 = ADC_CR2_ADON;
 	ADC1->SQR3 = channel;
 	uint16_t eoc = 0;
+	//Wait for end of conversion
 	do {
 		eoc = ADC1->SR >> 1 & 1;
 	} while (eoc == 0);
@@ -33,6 +34,7 @@ uint32_t ConvertAdcChannel(uint8_t channel){
 uint16_t convert_motor_speed (uint32_t potentiometer_reading)
 {
 	// converts values from 0xfff-0x0 -> 0xa-0x5f or 10 - 95 (decimal)
+	//Maps potentiometer for use with our motors
 	uint16_t output = 0xfff - potentiometer_reading;
 	output = (uint16_t) (output / 48) + 10;
 	return output;

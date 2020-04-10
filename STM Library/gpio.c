@@ -1,5 +1,5 @@
 /******************************************************************************
- * Name:    gpio.h
+ * Name:    gpio.c
  * Description: STM32 gpio functions
  * Version: V1.00
  * Authors: Avery Cameron
@@ -28,21 +28,19 @@ void UpdateLeds(uint16_t LED_val){
 	GPIOA->ODR = odrVal | update_val;
 }
 
-void BlinkLeds(void){
-	int delay = 600000;
-	UpdateLeds(~GPIOA->ODR);
-	Delay(delay);
-}
-
 void ConfigureSwitches(){
+	//Configure the switches as push/pull input
 	GPIOA->CRL &= 0xFFF00FFF;
 	GPIOA->CRL |= 0x00088000;
 	GPIOA->BSRR |= 0x00000018;
 }
 
 uint8_t ReadSwitches(){
+	//Read the switches on PA3 and 4 and make sure each value is only a 1 or 0
 	uint8_t switch1 = ((GPIOA->IDR & GPIO_IDR_IDR3) >> 3) & 1;
 	uint8_t switch2 = ((GPIOA->IDR & GPIO_IDR_IDR4) >> 4) & 1;
+	
+	//Check if either switch is pressed
 	if (switch1 == 0 || switch2 == 0){
 		return 1;
 	}
@@ -57,6 +55,7 @@ void ConfigureIrSensors(){
 }
 
 uint8_t ReadIR(uint8_t sensor){
+	//Read sensor from PA5 and PC8
 	if (sensor == 1){
 		return (GPIOA->IDR & (1 << (5))) >> (5) & 0x1;
 	}
@@ -139,9 +138,11 @@ void TurnRight(void)
 
 void Stop(uint16_t pulsewidth)
 {
+	//Gradually reduce the PWM output 
 	for (int i = pulsewidth; i > 0; i-=5){
 		SetTim4DutyCycle(i);
 	}
+	//Set all motor input pins to 0
 	GPIOB->ODR &= ~GPIO_ODR_ODR3;
 	GPIOB->ODR &= ~GPIO_ODR_ODR4;
 	
@@ -157,6 +158,7 @@ void Stop(uint16_t pulsewidth)
 
 void Start(uint16_t pulsewidth)
 {
+	//Gradually increase teh PWM output
 	for (int i = 0; i < pulsewidth; i+=5){
 		SetTim4DutyCycle(i);
 	}

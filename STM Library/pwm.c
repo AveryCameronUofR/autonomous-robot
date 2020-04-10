@@ -2,7 +2,7 @@
 * Name:    pwm.c
 * Description: PWM functions
 * Version: V1.00
-* Authors: Avery Cameron
+* Authors: Avery Cameron Raymond Knorr
 *
 *****************************************************************************/
 #include "stm32f10x.h"
@@ -84,8 +84,10 @@ void Tim4PwmInit(uint16_t period, uint16_t pulsewidth){
 
 void motor_clock(void)
 {
-	RCC->APB2ENR |=RCC_APB2ENR_IOPBEN; //clock enable for portB
-		 
+	//clock enable for portB
+	RCC->APB2ENR |=RCC_APB2ENR_IOPBEN; 
+	
+	//Enable PB3, 4 10,15 as Output
 	GPIOB->CRL |= GPIO_CRL_MODE3 | GPIO_CRL_MODE4;
 	GPIOB->CRL &= ~GPIO_CRL_CNF3 & ~GPIO_CRL_CNF4;
 	
@@ -100,8 +102,9 @@ void SetTim1DutyCycle(uint16_t pulsewidth) {
 }
 
 void SetTim4DutyCycle(uint16_t pulsewidth) {
-	TIM4->CCR1 = pulsewidth -20;
-	TIM4->CCR2 = pulsewidth - 20;
+	//Set the pulse witdth for each channel/motor
+	TIM4->CCR1 = pulsewidth;
+	TIM4->CCR2 = pulsewidth;
 	TIM4->CCR3 = pulsewidth;
 	TIM4->CCR4 = pulsewidth;
 	//Reinit the counter
