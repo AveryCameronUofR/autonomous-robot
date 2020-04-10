@@ -7438,7 +7438,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="111.76" y="63.5" size="1.778" layer="93">M4+</text>
 <text x="111.76" y="60.96" size="1.778" layer="93">M4-</text>
 <text x="20.32" y="20.32" size="1.778" layer="93">IR1</text>
-<text x="20.32" y="22.86" size="1.778" layer="93">IR2</text>
+<text x="-27.94" y="33.02" size="1.778" layer="93">IR2</text>
 <wire x1="-91.44" y1="17.78" x2="-83.82" y2="17.78" width="0.1524" layer="93"/>
 <wire x1="-91.44" y1="10.16" x2="-83.82" y2="10.16" width="0.1524" layer="93"/>
 <wire x1="-91.44" y1="2.54" x2="-83.82" y2="2.54" width="0.1524" layer="93"/>
@@ -7450,21 +7450,12 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="-91.44" y1="-25.4" x2="-83.82" y2="-25.4" width="0.1524" layer="93"/>
 <text x="-86.36" y="-10.16" size="1.778" layer="93">5V</text>
 <text x="-86.36" y="-25.4" size="1.778" layer="93">GND</text>
-<text x="-86.36" y="-17.78" size="1.778" layer="93">PC9</text>
+<text x="-86.36" y="-17.78" size="1.778" layer="93">PA5</text>
 <wire x1="-91.44" y1="86.36" x2="-83.82" y2="86.36" width="0.1524" layer="93"/>
 <wire x1="-91.44" y1="73.66" x2="-83.82" y2="73.66" width="0.1524" layer="93"/>
 <wire x1="-91.44" y1="81.28" x2="-83.82" y2="81.28" width="0.1524" layer="93"/>
 <text x="-86.36" y="86.36" size="1.778" layer="93">5V</text>
 <text x="-86.36" y="73.66" size="1.778" layer="93">GND</text>
-<wire x1="-91.44" y1="114.3" x2="-83.82" y2="114.3" width="0.1524" layer="93"/>
-<wire x1="-91.44" y1="109.22" x2="-83.82" y2="109.22" width="0.1524" layer="93"/>
-<wire x1="-91.44" y1="104.14" x2="-83.82" y2="104.14" width="0.1524" layer="93"/>
-<wire x1="-91.44" y1="99.06" x2="-83.82" y2="99.06" width="0.1524" layer="93"/>
-<text x="-86.36" y="114.3" size="1.778" layer="93">5V</text>
-<text x="-86.36" y="99.06" size="1.778" layer="93">GND</text>
-<text x="-127" y="116.84" size="1.778" layer="93">HC-SR04</text>
-<text x="-40.64" y="43.18" size="1.778" layer="93">Ultrasonic_Trig</text>
-<text x="-40.64" y="38.1" size="1.778" layer="93">Ultrasonic_Echo</text>
 <text x="20.32" y="53.34" size="1.778" layer="93" ratio="5">T1</text>
 <text x="66.04" y="104.14" size="1.778" layer="93" ratio="5">PB3</text>
 <wire x1="-55.88" y1="-35.56" x2="129.54" y2="-35.56" width="0.1524" layer="97"/>
@@ -7485,10 +7476,14 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="-104.14" y1="27.94" x2="-91.44" y2="27.94" width="0.1524" layer="93"/>
 <text x="-96.52" y="30.48" size="1.778" layer="97" ratio="5">5V</text>
 <text x="-96.52" y="27.94" size="1.778" layer="97" ratio="5">GND</text>
-<text x="-86.36" y="104.14" size="1.778" layer="91">PA3</text>
-<text x="-86.36" y="109.22" size="1.778" layer="91">PA1</text>
 <text x="-86.36" y="81.28" size="1.778" layer="91">PA8</text>
 <text x="-40.64" y="40.64" size="1.778" layer="91">Potentiometer</text>
+<text x="-27.94" y="38.1" size="1.778" layer="91">LS1</text>
+<text x="-27.94" y="35.56" size="1.778" layer="91">LS2</text>
+<text x="58.42" y="-7.62" size="1.778" layer="91">GND</text>
+<text x="58.42" y="-30.48" size="1.778" layer="91">GND</text>
+<text x="58.42" y="7.62" size="1.778" layer="91">PA3</text>
+<text x="58.42" y="-15.24" size="1.778" layer="91">PA4</text>
 </plain>
 <moduleinsts>
 <moduleinst name="IR1" module="IR" x="-111.76" y="10.16">
@@ -7500,8 +7495,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <moduleinst name="SERVO1" module="SERVO" x="-111.76" y="81.28">
 <attribute name="NAME" x="-111.76" y="81.28" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
-<moduleinst name="UTLRASONIC1" module="UTLRASONIC" x="-111.76" y="106.68">
-<attribute name="NAME" x="-111.76" y="106.68" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="LIMITSWITCH1" module="LIMITSWITCH" x="88.9" y="0">
+<attribute name="NAME" x="88.9" y="0" size="2.032" layer="95" align="bottom-center"/>
+</moduleinst>
+<moduleinst name="LIMITSWITCH2" module="LIMITSWITCH" x="88.9" y="-22.86">
+<attribute name="NAME" x="88.9" y="-22.86" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
@@ -8032,6 +8030,37 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <segment>
 <wire x1="106.68" y1="96.52" x2="114.3" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="L298" pin="OUT4"/>
+</segment>
+</net>
+<net name="N$62" class="0">
+<segment>
+<portref moduleinst="LIMITSWITCH1" port="COM"/>
+<wire x1="68.58" y1="-7.62" x2="60.96" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$63" class="0">
+<segment>
+<wire x1="60.96" y1="7.62" x2="68.58" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$64" class="0">
+<segment>
+<wire x1="60.96" y1="2.54" x2="68.58" y2="2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$65" class="0">
+<segment>
+<wire x1="60.96" y1="-15.24" x2="68.58" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$66" class="0">
+<segment>
+<wire x1="60.96" y1="-20.32" x2="68.58" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$67" class="0">
+<segment>
+<wire x1="60.96" y1="-30.48" x2="68.58" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
